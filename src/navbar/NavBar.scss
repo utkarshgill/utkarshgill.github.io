@@ -1,0 +1,79 @@
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#work {
+    width:44px;
+}
+
+#contact {
+    width:66px;
+}
+
+#about {
+    width:52px;
+}
+
+.nav-button-active {
+    font-family: PP Lorge;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    opacity: 87%;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    outline: 0;
+    width: 24px;
+    cursor: pointer;
+}
+
+.nav-button {
+    font-family: PP Smol;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    opacity: 60%;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    opacity: 87%;
+}
+
+.nav-button:focus {
+    outline:0;
+}
+
+.nav-button-group {
+    display: flex;
+    width: 272px;
+    justify-content: space-between;
+}
+
+.parent {
+    display: flex;
+    width: 856px;
+    justify-content: space-between;
+  }
+
+.nav-base {
+    display: flex;
+    background: white;
+    width: 100vw;
+    justify-content: center;
+    height: 140px;
+    align-items: center;
+    z-index: 11;
+}
