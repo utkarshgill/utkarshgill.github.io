@@ -51,7 +51,7 @@ class Panel extends React.Component {
     }
 }
 
-class Nav extends React.Component {
+class NavBar extends React.Component {
     render() {
         return (
             <Tabs selected={3}>
@@ -63,4 +63,4 @@ class Nav extends React.Component {
     }
 }
 
-export default Nav;
+export default NavBar;
