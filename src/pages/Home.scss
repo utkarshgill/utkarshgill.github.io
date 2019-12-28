@@ -1,0 +1,44 @@
+.hover-listener:hover + #down-arrow {
+    animation-play-state: running;
+}
+
+.hover-listener {
+    position: relative;
+    grid-row: 5 / 6;
+}
+
+#down-arrow {
+    position: absolute;
+    grid-row: 5 / 6;
+    justify-self: center;
+    animation-name: float;
+    animation-duration: .5s; 
+    animation-timing-function: ease-in-out; 
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: paused;
+}
+
+@keyframes float {
+    0% {
+        top:48px;
+    }
+    100% {
+        top: 64px;
+    }
+}
+
+#intro1 {
+    grid-row: 4 / 5;
+}
+
+.name {
+    grid-row: 3 / 4;
+}
+
+.greet {
+    grid-row: 2 / 3;
+    align-self: end;
+}
