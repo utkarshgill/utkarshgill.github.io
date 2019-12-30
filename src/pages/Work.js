@@ -1,43 +1,67 @@
 import React from 'react';
 import ProjectCard from '../components/ProjectCard.js';
-import ODINcover from '../images/test.jpg';
-import ODINbanner from '../images/test-ls.jpg';
+import ProjectView from './ProjectView.js';
+import { projects } from '../project_data.js';
+import { Redirect } from 'react-router-dom';
 
 class Work extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cardOpen: false,
+            projectIndex: 0,
+        }
+        this.indexChangeHandler();
+        this.cardStateHandler();
+        let executed = false;
+    }
+
+    iconHandler() {
+        if (!this.executed) {
+            this.executed = true;
+            this.props.his.setState({ rotate: true, projectIndex: this.state.projectIndex })
+        }
+    }
+
+    indexChangeHandler() {
+        this.props.his.setState({ selected: 0 });
+    }
+
+    cardStateHandler() {
+        this.setState({ cardOpen: false })
+        this.executed = false;
+    }
+
+    contentViewHandler() {
+        const self = this;
+        if (this.state.cardOpen) {
+            this.iconHandler();
+            return (
+                <ProjectView active={this.state.projectIndex}/>
+            )
+        }
+        else {
+            return (
+                <div className="card-holder">
+                    {projects.map((elem, index) => {
+                        return <ProjectCard self={self}
+                            index={index}
+                            thumbnail={elem.thumbnail}
+                            genre={elem.genre}
+                            title={elem.title}
+                            client={elem.client} />
+                    })}
+                </div>
+            )
+        }
+    }
+
     render() {
-        if(this.props.status===0) {
         return (
             <div className="parent-box">
-                <div className="card-holder">
-                    <ProjectCard
-                    index={1}
-                    thumbnail={ODINcover}
-                    banner={ODINbanner}
-                    genre="PRODUCT DESIGN"
-                    title="ODIN - The Marketplace Cerebrum"
-                    client="Wheelseye"
-                    brief="ODIN is a supply-demand management portal for a 
-                    logistics based startup - Wheelseye. It is an internal 
-                    product mainly used by the employees.
-
-                    ODIN is a supply-demand management portal for a 
-                    logistics based startup - Wheelseye. It is an internal 
-                    product mainly used by the employees.
-                    
-                    ODIN is a supply-demand management portal for a 
-                    logistics based startup - Wheelseye. It is an internal 
-                    product mainly used by the employees."
-                    duration="2 months (Dec ‘19 - Jan ‘20)"
-                    roles="User Research
-                    User Interviews
-                    Journey Mapping"
-                    medium={"https://www.behance.net/gallery/81553689/Kookerr-A-hands-free-cooking-app-concept-UIUX"}
-                    behance={"https://www.behance.net/gallery/81553689/Kookerr-A-hands-free-cooking-app-concept-UIUX"}
-                    />
-                </div>
+                {this.contentViewHandler()}
             </div>
-        )}
-        return null;
+        )
     }
 }
 

@@ -1,7 +1,14 @@
 a {
-    padding-left: 16px;
+    padding: 0;
     width: 200px;
     text-align: left;
+    text-decoration: none;
+    color: black;
+    opacity: 0.87;
+}
+
+.social-icon {
+    padding-right: 16px;
 }
 
 .links {
@@ -16,26 +23,36 @@ a {
     padding-right: 36px;
 }
 
+.link-button:hover {
+    opacity: .87;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
 .link-button {
     display: flex;
     background: none;
     outline: 0;
     border: 0;
     padding: 0;
-    padding-bottom: 32px;
+    padding-bottom: 24px;
     margin: 0;
     font-family: PP Okay;
     font-size: 16px;
+    opacity: .6;
     line-height: 24px;
     align-items: center;
     cursor: pointer;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
+
+
 
 h3 {
     font-family: PP Lorge;
     font-size: 48px;
     font-size: 48px;
     line-height: 58px;
+    opacity: .87;
     letter-spacing: -0.01em;
     grid-row: 2 / 3;
     padding: 0;

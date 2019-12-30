@@ -1,0 +1,51 @@
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 272px);
+    grid-column-gap: 24px;
+}
+
+.banner {
+    grid-column: 1 / 4;
+    padding-bottom: 24px;
+}
+.project-title {
+    grid-column: 1 / 4;
+}
+
+.project-content {
+    padding-top: 72px;
+    grid-column: 1 / 2;
+}
+
+.brief-head {
+    font-family: PP Lorge;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: .6;
+    padding-bottom: 16px;
+}
+
+#project-brief {
+    height: auto;
+    padding-bottom: 48px;
+}
+
+.sidebar {
+    padding-top: 72px;
+    grid-column: 3 / 4;
+}
+
+.sub-context {
+    font-family: PP Smol;
+    font-size: 16px;
+    opacity: .6;
+    grid-column: 1 / 4;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+#bullet {
+    font-size: 20px;
+    color: black;
+    padding: 0 3px 0 3px;
+}

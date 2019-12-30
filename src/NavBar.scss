@@ -8,7 +8,7 @@ ul {
 .hidden {
     visibility: hidden;
     font-family: PP Smol;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     text-decoration: none;
     color: #000000;
@@ -22,20 +22,22 @@ ul {
 }
 
 #work {
-    width:44px;
+    padding: 0;
+    width: auto;
 }
 
 #contact {
-    width:66px;
+    width: auto;
 }
 
 #about {
-    width:52px;
+    width: auto;
 }
 
 .nav-button-active {
+    text-decoration: none;
     font-family: PP Okay;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
     text-decoration: none;
     color: #000000;
@@ -49,23 +51,54 @@ ul {
     cursor: pointer;
 }
 
-.nav-button {
-    font-family: PP Smol;
-    font-size: 20px;
+.rotate-button:hover {
+    opacity: 87%;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.rotate-button:hover {
+    opacity: 60%;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.rotate-button {
+    transform: rotate(-90deg);
+    text-decoration: none;
+    font-family: PP Okay;
+    font-size: 16px;
     line-height: 24px;
     text-decoration: none;
     color: #000000;
-    opacity: 60%;
+    opacity: 38%;
     background: none;
     height: 24px;
     padding: 0px;
     border: none;
     width: 24px;
     cursor: pointer;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.nav-button {
+    text-decoration: none;
+    font-family: PP Okay;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    opacity: 38%;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .nav-button:hover {
-    opacity: 87%;
+    opacity: 60%;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .nav-button:focus {
@@ -93,5 +126,5 @@ ul {
     justify-content: center;
     height: 140px;
     align-items: center;
-    z-index: 11;
+    z-index: 25;
 }

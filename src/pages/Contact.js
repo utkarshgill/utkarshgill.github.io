@@ -13,22 +13,28 @@ import behance from '../icons/behance.svg';
 
 
 class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+        this.indexChangeHandler();
+    }
+    indexChangeHandler() {
+        this.props.his.setState({selected: 2})
+    }
     render() {
-        if(this.props.status===2) {
         return (
                 <div className="parent-box">
-                    <h3>Let's Connect!</h3>
+                    <h3>Let's <span>Connect!</span></h3>
                     <div className="photo" />
                     <p id="contact-info">Wanna create someting great? Feel free to contact
                    for freelance/collaborations or just drop a hi! :)</p>
                     <div className="links">
-                        <div id="group1" class="link-group">
+                        <div id="group1" className="link-group">
                             <LinkButton icon={mail} label={"ugill@ee.iitr.ac.in"} link={"https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=ugill@ee.iitr.ac.in"} />
                             <LinkButton icon={call} label={"+91 85728 45414"} link={"tel:+918572845414"} />
                             <LinkButton icon={facebook} label={"facebook"} link={"https://www.facebook.com/utkarsh.gill.108"} />
                             <LinkButton icon={instagram} label={"Instagram"} link={"https://www.instagram.com/utkarshgill07/"} />
                         </div>
-                        <div id="group2" class="link-group">
+                        <div id="group2" className="link-group">
                             <LinkButton icon={linkedin} label={"LinkedIn"} link={"https://in.linkedin.com/in/utkarsh-gill-9a5029173"} />
                             <LinkButton icon={github} label={"GitHub"} link={"https://github.com/qroach"} />
                             <LinkButton icon={dribbble} label={"dribbble"} link={"https://dribbble.com/utkarshgill07"} />
@@ -38,8 +44,7 @@ class Contact extends React.Component {
 
 
                 </div>
-        )}
-        return null;
+        )
     }
 }
 
