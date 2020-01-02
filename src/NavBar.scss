@@ -5,20 +5,142 @@ ul {
     list-style: none;
 }
 
-.hidden {
+.hidden-start {
     visibility: hidden;
     font-family: PP Smol;
     font-size: 20px;
     line-height: 24px;
     text-decoration: none;
     color: #000000;
-    opacity: 60%;
     background: none;
     height: 24px;
     padding: 0px;
     border: none;
     width: 24px;
     cursor: pointer;
+}
+
+.not-hidden-active {
+    font-family: PP Okay;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    opacity: .87;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    animation-name: unhideActive;
+    animation-duration: .8s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes unhideActive {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.87;
+        visibility: visible;
+    }
+}
+
+.not-hidden {
+    font-family: PP Okay;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    animation-name: unhide;
+    animation-duration: .8s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes unhide {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.38;
+        visibility: visible;
+    }
+}
+
+.hidden-active {
+    font-family: PP Okay;
+    font-size: 16;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    opacity: .87;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    animation-name: hideActive;
+    animation-duration: .8s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes hideActive {
+    0%{
+        visibility: visible;
+        opacity: .87;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+.hidden {
+    font-family: PP Okay;
+    font-size: 16;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    animation-name: hide;
+    animation-duration: .8s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes hide {
+    0%{
+        visibility: visible;
+        opacity: .38;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 #work {
@@ -62,7 +184,6 @@ ul {
 }
 
 .rotate-button {
-    transform: rotate(-90deg);
     text-decoration: none;
     font-family: PP Okay;
     font-size: 16px;
@@ -76,7 +197,51 @@ ul {
     border: none;
     width: 24px;
     cursor: pointer;
-    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    animation-name: antic;
+    animation-duration: .4s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes antic {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-90deg);
+    }
+}
+
+.back-nav-button {
+    text-decoration: none;
+    font-family: PP Okay;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    opacity: 38%;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    animation-name: clock;
+    animation-duration: .4s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    
+}
+
+@keyframes clock {
+    0%{
+        transform: rotate(-90deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
 }
 
 .nav-button {
@@ -93,7 +258,7 @@ ul {
     border: none;
     width: 24px;
     cursor: pointer;
-    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    
 }
 
 .nav-button:hover {
@@ -105,10 +270,50 @@ ul {
     outline:0;
 }
 
+.nav-button-group-hidden {
+    display: flex;
+    width: 272px;
+    justify-content: space-between;
+
+    animation-name: hideNav;
+    animation-duration: .8s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+
+@keyframes hideNav {
+    0%{
+        visibility: visible;
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 .nav-button-group {
     display: flex;
     width: 272px;
     justify-content: space-between;
+    animation-name: unhideNav;
+    animation-duration: .8s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes unhideNav {
+    0%{
+        opacity: 0;
+        visibility: hidden;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 .parent {
@@ -122,8 +327,8 @@ ul {
     position: fixed;
     display: flex;
     background: white;
-    width: 100vw;
     justify-content: center;
+    width: 100vw;
     height: 140px;
     align-items: center;
     z-index: 25;

@@ -3,6 +3,7 @@ import ProjectCard from '../components/ProjectCard.js';
 import ProjectView from './ProjectView.js';
 import { projects } from '../project_data.js';
 import { Redirect } from 'react-router-dom';
+import Home from './Home.js';
 
 class Work extends React.Component {
     constructor(props) {
@@ -11,11 +12,9 @@ class Work extends React.Component {
             cardOpen: false,
             projectIndex: 0,
         }
-        this.indexChangeHandler();
         this.cardStateHandler();
-        let executed = false;
     }
-
+    
     iconHandler() {
         if (!this.executed) {
             this.executed = true;
@@ -25,23 +24,20 @@ class Work extends React.Component {
 
     indexChangeHandler() {
         this.props.his.setState({ selected: 0 });
-    }
+    }   
 
     cardStateHandler() {
         this.setState({ cardOpen: false })
         this.executed = false;
+        this.props.his.setState({rotate: false})
     }
 
     contentViewHandler() {
         const self = this;
         if (this.state.cardOpen) {
             this.iconHandler();
-            return (
-                <ProjectView active={this.state.projectIndex}/>
-            )
         }
-        else {
-            return (
+        else    return (
                 <div className="card-holder">
                     {projects.map((elem, index) => {
                         return <ProjectCard self={self}
@@ -54,11 +50,10 @@ class Work extends React.Component {
                 </div>
             )
         }
-    }
 
     render() {
         return (
-            <div className="parent-box">
+            <div className="worky">
                 {this.contentViewHandler()}
             </div>
         )

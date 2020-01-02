@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+import  AppView from './AppView';
 import './fonts/Proxima Nova Bold.otf';
 import './fonts/Proxima Nova Semibold.otf';
 import './fonts/Proxima Nova Regular.otf';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+const App = () => (
+    <Router>
+        <AppView />
+    </Router>
+)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

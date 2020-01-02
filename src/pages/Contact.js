@@ -15,7 +15,6 @@ import behance from '../icons/behance.svg';
 class Contact extends React.Component {
     constructor(props) {
         super(props);
-        this.indexChangeHandler();
     }
     indexChangeHandler() {
         this.props.his.setState({selected: 2})

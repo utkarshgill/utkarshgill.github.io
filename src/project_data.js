@@ -125,7 +125,7 @@ export const projects = [
         banner: require("./images/test-ls.jpg"),
         genre: "UI/UX design",
         client:"Design Studio IITR",
-        brief: "ODIN is a supply-demand management portal for a logistics based startup - Wheelseye. It is an internal product mainly used by the employees.",
+        brief: "ODIN is a supply-demand management portal for a logistics based startup - Wheelseye. It is an internal product mainly used by the employees.ODIN is a supply-demand management portal for a logistics based startup - Wheelseye. It is an internal product mainly used by the employees.ODIN is a supply-demand management portal for a logistics based startup - Wheelseye. It is an internal product mainly used by the employees.ODIN is a supply-demand management portal for a logistics based startup - Wheelseye. It is an internal product mainly used by the employees.",
         duration: "2 months (Dec'19 - Jan'20)",
         roles: "User Research\nUser Interview\nJourney Mapping",
         medium: "https://www.behance.net/gallery/81553689/Kookerr-A-hands-free-cooking-app-concept-UIUX",

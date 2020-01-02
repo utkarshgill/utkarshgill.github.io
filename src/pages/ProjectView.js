@@ -8,39 +8,47 @@ import dribbble from '../icons/dribbble.svg';
 import './ProjectView.scss';
 
 class ProjectView extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            projectIndex: this.props.active
+        }
+    }
     checkDribbble() {
-        if(projects[this.props.active].dribbble) {
+        if(projects[this.state.projectIndex].dribbble) {
             return(
-                <LinkButton icon={dribbble} label={"View on dribbble"} link={projects[this.props.active].dribbble} />
+                <LinkButton icon={dribbble} label={"View on dribbble"} link={projects[this.state.projectIndex].dribbble} />
             )
         }
         return null;
     } 
     checkBehance() {
-        if(projects[this.props.active].behance) {
+        if(projects[this.state.projectIndex].behance) {
             return(
-                <LinkButton icon={behance} label={"View on Behance"} link={projects[this.props.active].behance} />
+                <LinkButton icon={behance} label={"View on Behance"} link={projects[this.state.projectIndex].behance} />
             )
         }
         return null;
     } 
     render() {
         return (
-            <div className="project-container">
-                <img className="banner" src={projects[this.props.active].banner} />
-                <p className="sub-context">{projects[this.props.active].genre + " "}<span id="bullet">•</span>{" " + projects[this.props.active].client}</p>
-                <h3 className="project-title">{projects[this.props.active].title}</h3>
-                <div className="project-content">
-                    <p className="brief-head">Project Brief</p>
-                    <p id="project-brief">{projects[this.props.active].brief}</p>
-                    <LinkButton icon={redirect} label="Read Case Study" link={projects[this.props.active].medium} />
-                    {this.checkDribbble()}
-                    {this.checkBehance()}
-                </div>
-                <div className="sidebar">
-                    <SideBar title="Duration" content={projects[this.props.active].duration} />
-                    <SideBar title="My Role" content={projects[this.props.active].roles} />
-                    <SideBar behance={projects[this.props.active].behance} dribbble={projects[this.props.active].dribbble} />
+            <div className="worky">
+                <div className="project-container">
+                    <img className="banner" src={projects[this.state.projectIndex].banner} />
+                    <p className="sub-context">{projects[this.state.projectIndex].genre + " "}<span id="bullet">•</span>{" " + projects[this.state.projectIndex].client}</p>
+                    <h3 className="project-title">{projects[this.state.projectIndex].title}</h3>
+                    <div className="project-content">
+                        <p className="brief-head">Project Brief</p>
+                        <p id="project-brief">{projects[this.state.projectIndex].brief}</p>
+                        <LinkButton icon={redirect} label="Read Case Study" link={projects[this.state.projectIndex].medium} />
+                        {this.checkDribbble()}
+                        {this.checkBehance()}
+                    </div>
+                    <div className="sidebar">
+                        <SideBar title="Duration" content={projects[this.state.projectIndex].duration} />
+                        <SideBar title="My Role" content={projects[this.state.projectIndex].roles} />
+                        <SideBar behance={projects[this.state.projectIndex].behance} dribbble={projects[this.state.projectIndex].dribbble} />
+                    </div>
                 </div>
             </div>
         )

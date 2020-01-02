@@ -1,7 +1,9 @@
 .project-container {
     display: grid;
+    grid-row: 2 / 3;
     grid-template-columns: repeat(3, 272px);
     grid-column-gap: 24px;
+    margin: 20vh 0 0 0;
 }
 
 .banner {
