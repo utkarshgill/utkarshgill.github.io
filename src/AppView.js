@@ -8,10 +8,13 @@ import {
   Redirect,
   withRouter
 } from "react-router-dom";
-import { AnimatedSwitch } from 'react-router-transition';
+import { AnimatedRoute } from "react-router-transition";
 import './NavBar.scss';
 import './App.scss';
 import icon from './icons/arrow_upward-24px.svg';
+import cross from './icons/close-24px.svg';
+import hamburger from './icons/menu-24px.svg'
+import { slide as Menu } from 'react-burger-menu';
 import Home from './pages/Home.js';
 import Work from './pages/Work.js';
 import About from './pages/About.js';
@@ -28,6 +31,7 @@ class Tabs extends React.Component {
     this.state = {
       previous: -1,
       selected: this.props.selected || 0,
+      ham: false
     }
 
   }
@@ -35,29 +39,6 @@ class Tabs extends React.Component {
   handleClick(index) {
     this.setState({ selected: index })
   }
-
-
-
-  /* hideButton() {
-     console.log(this.props.rotate)
-     let buttonStyle = "hidden";
-     
-     if(this.props.rotate) {
-       buttonStyle = "rotate-button";
-       return <NavLink className={buttonStyle} to="/#work" ><img src={icon} /></NavLink>;
-       
-     }
-     else {  
-       if(this.state.selected != 3 && this.props.rotate) {
-         buttonStyle = "back-nav-button";
-         return <a className={buttonStyle} href="#home" ><img src={icon} /></a>;
-       }
-       else if(this.state.selected != 3) {
-         buttonStyle = "nav-button";
-         return <a className={buttonStyle} href="#home" ><img src={icon} /></a>;
-       }
-       else return <a className="hidden-start" href="#home" ><img src={icon} /></a>;
-     } */
 
   buttonViewHandler() {
     console.log(this.props.rotate)
@@ -67,7 +48,7 @@ class Tabs extends React.Component {
 
       this.auxRotate = true;
 
-      return <Link className="rotate-button" to="/#work" ><img src={icon} /></Link>;
+      return <NavLink className="rotate-button" to="/#work" ><img src={icon} /></NavLink>;
     }
     else if (this.state.selected == 3) {
       if (this.state.previous >= 0) {
@@ -108,9 +89,34 @@ class Tabs extends React.Component {
     }
   }
 
+  renderHam() {
+    if (!this.props.rotate) {
+      let style1 = 0 === this.state.selected ? "menu-item nav-button-active" : "menu-item nav-button";
+      let style2 = 1 === this.state.selected ? "menu-item nav-button-active" : "menu-item nav-button";
+      let style3 = 2 === this.state.selected ? "menu-item nav-button-active" : "menu-item nav-button";
+      return (
+        <Menu right customCrossIcon={<img src={cross} />} customBurgerIcon={<img src={hamburger} />}>
+          <a id="work" className={style1} href="/#work">work</a>
+          <a id="about" className={style2} href="/#about">about</a>
+          <a id="contact" className={style3} href="/#contact">contact</a>
+        </Menu>
+      )
+    }
+  }
+
+  renderTitle() {
+    if (!this.props.rotate) {
+      if (this.state.selected == 0) return <p className="nav-title">work</p>
+      else if (this.state.selected == 1) return <p className="nav-title">about</p>
+      else if (this.state.selected == 2) return <p className="nav-title">contact</p>
+    }
+  }
+
   render() {
     return (
-      <div>
+      <div style={{ position: "relative" }}>
+        {this.renderTitle()}
+        {this.renderHam()}
         <div className="nav-base">
           <div className="parent">
             {this.buttonViewHandler()}
@@ -130,6 +136,7 @@ class Tabs extends React.Component {
     )
   }
 }
+
 
 class Panel extends React.Component {
   render() {
@@ -169,6 +176,37 @@ class AppView extends React.Component {
 
   render() {
     const his = this;
+    function myProjectView() {
+      return <ProjectView his={his} active={his.state.projectIndex} />
+    }
+    function fullPage() {
+      return <ReactFullpage
+        //fullpage options
+        licenseKey={'YOUR_KEY_HERE'}
+        scrollingSpeed={800} /* Options here */
+        scrollOverflow={true}
+        animateAnchor={false}
+        controlArrows={false}
+        resetSliders={true}
+        recordHistory={false}
+        dragAndMove={"vertical"}
+        onLeave={his.onLeave.bind(his)}
+        afterLoad={his.afterLoad.bind(his)}
+
+
+        render={({ state, fullpageApi }) =>
+
+          <ReactFullpage.Wrapper>
+
+            <div onClick={() => fullpageApi.moveSectionDown()} data-anchor="home" className="section"><Home /></div>
+            <div className="section" data-anchor="work"><Work his={his} /></div>
+            <div className="section" data-anchor="about"><About /></div>
+            <div className="section" data-anchor="contact"><Contact /></div>
+
+          </ReactFullpage.Wrapper>
+
+        } />
+    }
     return (
       <div style={{ display: "flex", flexDirection: "column", position: "relative" }}>
         <Tabs ref={this.tabs} rotate={this.state.rotate} his={his} selected={3}>
@@ -176,43 +214,22 @@ class AppView extends React.Component {
           <Panel title="about" />
           <Panel title="contact" />
         </Tabs>
-        <AnimatedSwitch
-          atEnter={{ opacity: 0 }}
-          atLeave={{ opacity: 0 }}
-          atActive={{ opacity: 1 }}
-          runOnMount={false}
-          className="switch-wrapper"
-        >
-          <Route exact path="/">
-            <ReactFullpage
-              //fullpage options
-              licenseKey={'YOUR_KEY_HERE'}
-              scrollingSpeed={800} /* Options here */
-              scrollOverflow={true}
-              animateAnchor={true}
-              scrollOverflowReset={true}
-              controlArrows={false}
-              resetSliders={true}
-              recordHistory={false}
-              onLeave={this.onLeave.bind(this)}
-              afterLoad={this.afterLoad.bind(this)}
-
-
-              render={({ state, fullpageApi }) =>
-
-                <ReactFullpage.Wrapper>
-
-                  <div onClick={() => fullpageApi.moveSectionDown()} data-anchor="home" className="section"><Home /></div>
-                  <div className="section" data-anchor="work"><Work his={his} /></div>
-                  <div className="section" data-anchor="about"><About /></div>
-                  <div className="section" data-anchor="contact"><Contact /></div>
-
-                </ReactFullpage.Wrapper>
-
-              } />
-          </Route>
-          <Route path="/projects"><ProjectView his={his} active={this.state.projectIndex} /></Route>
-        </AnimatedSwitch>
+        <Switch>
+          <AnimatedRoute
+            exact path="/"
+            render={fullPage}
+            atEnter={{ opacity: 0 }}
+            atLeave={{ opacity: 0 }}
+            atActive={{ opacity: 1 }}
+          />
+          <AnimatedRoute
+            path="/projects"
+            render={myProjectView}
+            atEnter={{ opacity: 0 }}
+            atLeave={{ opacity: 0 }}
+            atActive={{ opacity: 1 }}
+          />
+        </Switch>
       </div>
 
     );

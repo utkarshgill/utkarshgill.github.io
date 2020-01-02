@@ -22,7 +22,7 @@ class Contact extends React.Component {
     render() {
         return (
                 <div className="parent-box">
-                    <h3>Let's <span>Connect!</span></h3>
+                    <h3 id="contact-greet" >Let's <span>Connect!</span></h3>
                     <div className="photo" />
                     <p id="contact-info">Wanna create someting great? Feel free to contact
                    for freelance/collaborations or just drop a hi! :)</p>

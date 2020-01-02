@@ -36,6 +36,7 @@ class Work extends React.Component {
         const self = this;
         if (this.state.cardOpen) {
             this.iconHandler();
+            return <Redirect to="/projects" />
         }
         else    return (
                 <div className="card-holder">

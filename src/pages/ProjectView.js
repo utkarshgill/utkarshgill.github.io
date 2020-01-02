@@ -35,8 +35,9 @@ class ProjectView extends React.Component {
             <div className="worky">
                 <div className="project-container">
                     <img className="banner" src={projects[this.state.projectIndex].banner} />
-                    <p className="sub-context">{projects[this.state.projectIndex].genre + " "}<span id="bullet">•</span>{" " + projects[this.state.projectIndex].client}</p>
+                    <img className="banner-mobile" src={projects[this.state.projectIndex].thumbnail} />
                     <h3 className="project-title">{projects[this.state.projectIndex].title}</h3>
+                    <p className="sub-context">{projects[this.state.projectIndex].genre + " "}<span id="bullet">•</span>{" " + projects[this.state.projectIndex].client}</p>
                     <div className="project-content">
                         <p className="brief-head">Project Brief</p>
                         <p id="project-brief">{projects[this.state.projectIndex].brief}</p>
@@ -47,7 +48,6 @@ class ProjectView extends React.Component {
                     <div className="sidebar">
                         <SideBar title="Duration" content={projects[this.state.projectIndex].duration} />
                         <SideBar title="My Role" content={projects[this.state.projectIndex].roles} />
-                        <SideBar behance={projects[this.state.projectIndex].behance} dribbble={projects[this.state.projectIndex].dribbble} />
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProjectCard.scss';
-import { Redirect , NavLink } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class ProjectCard extends React.Component {
 
@@ -11,7 +11,7 @@ class ProjectCard extends React.Component {
 
     render() {
             return(
-                <NavLink className="container" to="/projects" onClick={this.handleClick.bind(this)}>
+                <div className="container" onClick={this.handleClick.bind(this)}>
                     <img className="thumbnail" src={this.props.thumbnail}/>
                     <div className="text-container">
                         <text id="genre">{this.props.genre}</text>
@@ -19,7 +19,7 @@ class ProjectCard extends React.Component {
                         <text id="client">{this.props.client}</text>
                     </div>
                     <div className="overlay" />
-                </NavLink>
+                </div>
             )
     }
 }

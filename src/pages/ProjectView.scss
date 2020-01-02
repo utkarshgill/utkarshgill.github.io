@@ -12,6 +12,13 @@
 }
 .project-title {
     grid-column: 1 / 4;
+
+    font-family: PP Lorge;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -0.01em;
+    opacity:.87;
+    margin: 0;
 }
 
 .project-content {
@@ -50,4 +57,49 @@
     font-size: 20px;
     color: black;
     padding: 0 3px 0 3px;
+}
+
+.banner-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 864px) and (min-width: 420px) {
+    .banner {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 1px;
+        z-index: 10;
+        padding-bottom: 24px;
+    }
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 164px;
+        margin-bottom: 20vh;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .banner {
+        display: none;
+    }
+    .banner-mobile {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 1px;
+        z-index: 10;
+        padding-bottom: 24px;
+    }
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20vh;
+        margin-bottom: 20vh;
+        width: auto;
+    }
 }

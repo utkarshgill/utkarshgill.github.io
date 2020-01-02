@@ -34,7 +34,7 @@ ul {
     width: 24px;
     cursor: pointer;
     animation-name: unhideActive;
-    animation-duration: .8s;
+    animation-duration: .4s;
     animation-play-state: running;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -64,7 +64,7 @@ ul {
     width: 24px;
     cursor: pointer;
     animation-name: unhide;
-    animation-duration: .8s;
+    animation-duration: .4s;
     animation-play-state: running;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -95,7 +95,7 @@ ul {
     width: 24px;
     cursor: pointer;
     animation-name: hideActive;
-    animation-duration: .8s;
+    animation-duration: .4s;
     animation-play-state: running;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -126,7 +126,7 @@ ul {
     width: 24px;
     cursor: pointer;
     animation-name: hide;
-    animation-duration: .8s;
+    animation-duration: .4s;
     animation-play-state: running;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -332,4 +332,202 @@ ul {
     height: 140px;
     align-items: center;
     z-index: 25;
+}
+
+.bm-burger-button {
+    display: none
+}
+
+.bm-menu {
+    background: white;
+    z-index: 2500;
+}
+//mobile
+.bm-item-list {
+    position: absolute;
+    top: 140px;
+    margin-left: 24px;
+}
+
+
+
+@media only screen and (max-width: 864px) {
+
+    .rotate-button {
+        text-decoration: none;
+        font-family: PP Okay;
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: none;
+        color: #000000;
+        opacity: 87%;
+        background: none;
+        height: 24px;
+        padding: 0px;
+        border: none;
+        width: 24px;
+        cursor: pointer;
+        animation-name: antic;
+        animation-duration: .4s;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    
+    @keyframes antic {
+        0%{
+            transform: rotate(0);
+        }
+        100%{
+            transform: rotate(-90deg);
+        }
+    }
+
+    .back-nav-button {
+        text-decoration: none;
+        font-family: PP Okay;
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: none;
+        color: #000000;
+        opacity: 87%;
+        background: none;
+        height: 24px;
+        padding: 0px;
+        border: none;
+        width: 24px;
+        cursor: pointer;
+        animation-name: clock;
+        animation-duration: .4s;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+        
+    }
+    
+    @keyframes clock {
+        0%{
+            transform: rotate(-90deg);
+        }
+        100%{
+            transform: rotate(0);
+        }
+    }
+    .parent {
+        display: flex;
+        width: 100%;
+        margin: 0 24px 0 24px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 24px;
+      }
+
+    .not-hidden {
+        font-family: PP Okay;
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: none;
+        color: #000000;
+        background: none;
+        height: 24px;
+        padding: 0px;
+        border: none;
+        width: 24px;
+        cursor: pointer;
+        animation-name: unhide;
+        animation-duration: .4s;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    
+    @keyframes unhide {
+        0%{
+            visibility: hidden;
+            opacity: 0;
+        }
+        100%{
+            opacity: 0.87;
+            visibility: visible;
+        }
+    }
+
+    .nav-button-group {
+        display: none;
+        width: 272px;
+        justify-content: space-between;
+    }
+
+    .bm-burger-button {
+        position: fixed;
+        right: 0px;
+        top: 58px;
+        z-index: 1000;
+        display: block;
+        margin-right: 24px;
+        color: #000000;
+        opacity: .87;
+        height: 24px;
+        padding: 0px;
+        border: none;
+        width: 24px;
+    }
+
+    .bm-cross-button {
+        position: fixed;
+        right: 0px!important;
+        top: 58px!important;
+        z-index: 1100;
+        display: block;
+        margin-right: 24px;
+        color: #000000;
+        opacity: .87;
+        height: 24px;
+        padding: 0px;
+        border: none;
+        width: 24px;
+    }
+
+    .nav-button {
+        text-decoration: none;
+        font-family: PP Okay;
+        font-size: 20px;
+        line-height: 14px;
+        text-decoration: none;
+        color: #000000;
+        opacity: .38;
+        background: none;
+        height: 14px;
+        padding: 0px;
+        border: none;
+        width: 24px;
+        margin-bottom: 32px;
+        cursor: pointer;
+        
+    }
+
+    .nav-button-active {
+        text-decoration: none;
+        font-family: PP Okay;
+        font-size: 20px;
+        line-height: 14px;
+        text-decoration: none;
+        color: #000000;
+        opacity: .87;
+        background: none;
+        height: 14px;
+        padding: 0px;
+        border: none;
+        width: 24px;
+        margin-bottom: 32px;
+        cursor: pointer;
+        
+    }
+
+    .nav-button-group-hidden {
+        display: none;
+        width: 272px;
+        justify-content: space-between;
+    
+    }
 }

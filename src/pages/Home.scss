@@ -49,3 +49,17 @@
 span {
     color: #df0b39;
 }
+
+@media screen and (max-width: 370px) {
+    .name {
+        grid-row: 3 / 4;
+        font-size: 60px;
+        line-height: 72px;
+    }
+    
+    .greet {
+        align-self: end;
+        font-size: 60px;
+        line-height: 72px;
+    }
+}

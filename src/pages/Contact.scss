@@ -47,7 +47,7 @@ a {
 
 
 
-h3 {
+#contact-greet {
     font-family: PP Lorge;
     font-size: 48px;
     font-size: 48px;
@@ -69,4 +69,57 @@ h3 {
     background-color: #c4c4c4;
     grid-row: 2 / 3;
     justify-self: right;
+}
+
+
+@media screen and (max-width: 864px) {
+    #contact-greet {
+        font-family: PP Lorge;
+        font-size: 48px;
+        line-height: 58px;
+        letter-spacing: -0.01em;
+        opacity:.87;
+        
+        padding-bottom: 72px;
+    }
+    #contact-info {
+        display: flex;
+        flex-direction: column;     
+        padding-bottom: 60px;
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .link-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-right: 36px;
+    }
+
+.link-button {
+    display: flex;
+    background: none;
+    outline: 0;
+    border: 0;
+    padding: 0;
+    padding-bottom: 24px;
+    margin: 0;
+    font-family: PP Okay;
+    font-size: 16px;
+    opacity: .87;
+    line-height: 24px;
+    align-items: center;
+    cursor: pointer;
+}
+    .photo {
+        display: none;
+        width: 272px;
+        height: 532px;
+        background-color: #c4c4c4;
+        grid-row: 2 / 3;
+        justify-self: right;
+    }
 }

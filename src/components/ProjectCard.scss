@@ -111,3 +111,163 @@ h6 {
     align-items: center;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 864px) and (min-width: 380px) {
+    .overlay {
+        display: none;
+    }
+    .container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 366px;
+        height: 592px;
+        box-shadow: 0px 0px 0px .5px #c4c4c4;
+        border-radius: 1px;
+        justify-content: space-between;
+        margin: 0;
+        margin-bottom: 24px;
+        padding: 0;
+        align-items: center;
+        cursor: pointer;
+        z-index: 0;
+    }
+
+    h6 {
+        font-family: PP Lorge;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: #000000;
+        opacity: 0.87;
+        width: 334px;
+        margin: 0;
+        padding: 0;
+        z-index: 5;
+        margin-bottom: auto;
+    }
+
+    .thumbnail {
+        width: 366px;
+        height: 366px;
+        border-radius: 1px;
+        z-index: 10;
+    }
+
+    .text-container {
+        height: 226px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #client {
+        font-size: 14px;
+        line-height: 9px;
+        text-align: center;
+        color: #000000;
+        opacity: 0.38;
+        width: 240px;
+        padding: 0;
+        padding-bottom: 32px;
+        z-index: 5;
+    }
+
+    #genre {
+        font-family: PP Okay;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 0.2em;
+        color: #000000;
+        opacity: 0.38;
+        line-height: 8px;
+        width: 240px;
+        padding: 32px 0 32px 0;
+        z-index: 5;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width: 380) {
+    .overlay {
+        display: none;
+    }
+    .container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 272px;
+        height: 440px;
+        box-shadow: 0px 0px 0px .5px #c4c4c4;
+        border-radius: 1px;
+        margin: 0;
+        margin-bottom: 24px;
+        padding: 0;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 0;
+    }
+    
+.thumbnail{
+    width: 272px;
+    height: 272px;
+    border-radius: 1px;
+    z-index: 10;
+}
+
+h6 {
+    font-family: PP Lorge;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    opacity: 0.87;
+    width: 240px;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    margin-bottom: auto;
+    transition: color .2s cubic-bezier(0.4, 0.0, 0.2, 1), opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    
+}
+
+#genre {
+    font-family: PP Okay;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: #000000;
+    opacity: 0.38;
+    line-height: 8px;
+    width: 240px;
+    padding: 24px 0 24px 0;
+    z-index: 5;
+    transition: color .2s cubic-bezier(0.4, 0.0, 0.2, 1), opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    text-transform: uppercase;
+}
+
+#client {
+    font-size: 12px;
+    line-height: 8px;
+    text-align: center;
+    color: #000000;
+    opacity: 0.38;
+    width: 240px;
+    padding: 0;
+    padding-bottom: 24px;
+    z-index: 5;
+    transition: color .2s cubic-bezier(0.4, 0.0, 0.2, 1), opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.text-container {
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+}

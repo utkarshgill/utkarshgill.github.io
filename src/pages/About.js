@@ -13,7 +13,7 @@ class About extends React.Component {
     render() {
         return (
                 <div className="parent-box">
-                    <h3>Hi! I'm Utkarsh <span>Gill.</span></h3>
+                    <h3 id="about-greet" >Hi! I'm Utkarsh <span>Gill.</span></h3>
                     <div className="photo" />
                     <div className="intro-brief">
                         <p id="about-content">

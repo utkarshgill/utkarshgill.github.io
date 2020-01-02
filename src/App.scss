@@ -11,15 +11,12 @@
     
 }
 
-
-
-
 .worky{
     position: relative;
     display: flex;
     width: 870px;
     margin: auto;
-    position: relative;
+    
 }
 
 
@@ -44,7 +41,7 @@ p {
     font-size: 16px;
     font-family: PP Smol;
     line-height: 24px;
-    width: 470px;
+    max-width: 470px;
     margin: 0px;
     opacity: .6;
 }
@@ -91,3 +88,91 @@ button {
 .switch-wrapper .div {
     position: absolute;
 }
+
+.nav-title {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    margin: 0 auto;
+    top: 58px;
+    left: 0;
+    right: 0;
+    z-index: 26;
+    text-decoration: none;
+    text-align: center;
+    font-family: PP Okay;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    opacity: 87%;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+}
+
+@media screen and (max-width: 864px) {
+
+    .parent-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+        margin: 0 24px 0 24px;
+    }
+
+    .nav-title {
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        margin: 0 auto;
+        top: 58px;
+        left: 0;
+        right: 0;
+        z-index: 26;
+        text-decoration: none;
+        text-align: center;
+        font-family: PP Okay;
+        font-size: 20px;
+        line-height: 24px;
+        text-decoration: none;
+        color: #000000;
+        opacity: 87%;
+        background: none;
+        height: 24px;
+        padding: 0px;
+        border: none;
+    }
+
+    .name {
+        margin-bottom: 48px;
+    }
+
+    .worky{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        align-items: center;
+        margin: 0 24px;
+    }
+
+    .card-holder {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20vh;
+        margin-bottom: 20vh;
+        width: auto;
+        
+        
+    }
+
+    body::-webkit-scrollbar{
+        display: none;
+    }
+
+    body {
+        -ms-overflow-style: none;
+    }
+}
+
