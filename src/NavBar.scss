@@ -276,7 +276,7 @@ ul {
     justify-content: space-between;
 
     animation-name: hideNav;
-    animation-duration: .8s;
+    animation-duration: .4s;
     animation-play-state: running;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -299,7 +299,7 @@ ul {
     width: 272px;
     justify-content: space-between;
     animation-name: unhideNav;
-    animation-duration: .8s;
+    animation-duration: .4s;
     animation-play-state: running;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
