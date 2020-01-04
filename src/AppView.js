@@ -194,11 +194,11 @@ class AppView extends React.Component {
         licenseKey={'YOUR_KEY_HERE'}
         scrollingSpeed={800} /* Options here */
         scrollOverflow={true}
+        scrollOverflowReset={true}
         animateAnchor={false}
         controlArrows={false}
         resetSliders={true}
         recordHistory={false}
-        dragAndMove={"vertical"}
         onLeave={his.onLeave.bind(his)}
         afterLoad={his.afterLoad.bind(his)}
 
