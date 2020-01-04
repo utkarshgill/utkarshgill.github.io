@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link,
@@ -33,7 +32,6 @@ class Tabs extends React.Component {
       selected: this.props.selected || 0,
       ham: false
     }
-
   }
 
   handleClick(index) {
@@ -45,7 +43,6 @@ class Tabs extends React.Component {
     if (this.props.rotate) {
       console.log("f")
       this.navButtonGroup = "nav-button-group-hidden";
-
       this.auxRotate = true;
 
       return <NavLink className="rotate-button" to="/#work" ><img src={icon} /></NavLink>;
@@ -78,16 +75,23 @@ class Tabs extends React.Component {
 
       else {
         console.log("e")
-        return <a className="nav-button" href="#home" ><img src={icon} /></a>;
+        return <a className="nav-button-fix" href="#home" ><img src={icon} /></a>;
       }
     }
 
 
     else {
       console.log("g")
-      return <a className="nav-button" href="#home" ><img src={icon} /></a>;
+      return <a className="nav-button-fix" href="#home" ><img src={icon} /></a>;
     }
   }
+  
+  // closeMenu() {
+  //   if(this.exectued) {
+  //     this.exectued=true;
+  //     this.setState({open: false});
+  //   }
+  // }
 
   renderHam() {
     if (!this.props.rotate) {
@@ -95,7 +99,7 @@ class Tabs extends React.Component {
       let style2 = 1 === this.state.selected ? "menu-item nav-button-active" : "menu-item nav-button";
       let style3 = 2 === this.state.selected ? "menu-item nav-button-active" : "menu-item nav-button";
       return (
-        <Menu right customCrossIcon={<img src={cross} />} customBurgerIcon={<img src={hamburger} />}>
+        <Menu right isOpen={false} customCrossIcon={<img src={cross} />} customBurgerIcon={<img src={hamburger} />}>
           <a id="work" className={style1} href="/#work">work</a>
           <a id="about" className={style2} href="/#about">about</a>
           <a id="contact" className={style3} href="/#contact">contact</a>
@@ -172,10 +176,15 @@ class AppView extends React.Component {
   }
 
   afterLoad(origin, destination, direction) {
+    if(origin.index>-1) {
+      console.log("yuhhh")
+      this.tabs.current.setState({ open: false })
+    }
   }
 
   render() {
     const his = this;
+    console.log("This is the process.env", process.env.PUBLIC_URL)
     function myProjectView() {
       return <ProjectView his={his} active={his.state.projectIndex} />
     }
@@ -198,36 +207,30 @@ class AppView extends React.Component {
 
           <ReactFullpage.Wrapper>
 
-            <div onClick={() => fullpageApi.moveSectionDown()} data-anchor="home" className="section"><Home /></div>
-            <div className="section" data-anchor="work"><Work his={his} /></div>
-            <div className="section" data-anchor="about"><About /></div>
-            <div className="section" data-anchor="contact"><Contact /></div>
+            <div onClick={() => fullpageApi.moveSectionDown()} data-anchor="home" className="section fp-noscroll"><Home /></div>
+            <div className="section fp-noscroll" data-anchor="work"><Work his={his} /></div>
+            <div className="section fp-noscroll" data-anchor="about"><About /></div>
+            <div className="section fp-noscroll" data-anchor="contact"><Contact /></div>
 
           </ReactFullpage.Wrapper>
 
         } />
     }
     return (
-      <div style={{ display: "flex", flexDirection: "column", position: "relative" }}>
+      <div onContextMenu={(e)=> e.preventDefault()} style={{ display: "flex", flexDirection: "column", position: "relative" }}>
         <Tabs ref={this.tabs} rotate={this.state.rotate} his={his} selected={3}>
           <Panel title="work" />
           <Panel title="about" />
           <Panel title="contact" />
         </Tabs>
         <Switch>
-          <AnimatedRoute
-            exact path="/"
+          <Route
+            exact path={"/"}
             render={fullPage}
-            atEnter={{ opacity: 0 }}
-            atLeave={{ opacity: 0 }}
-            atActive={{ opacity: 1 }}
           />
-          <AnimatedRoute
-            path="/projects"
+          <Route
+            path={"/projects"}
             render={myProjectView}
-            atEnter={{ opacity: 0 }}
-            atLeave={{ opacity: 0 }}
-            atActive={{ opacity: 1 }}
           />
         </Switch>
       </div>

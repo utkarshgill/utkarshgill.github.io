@@ -39,9 +39,10 @@ class Contact extends React.Component {
                             <LinkButton icon={dribbble} label={"dribbble"} link={"https://dribbble.com/utkarshgill07"} />
                             <LinkButton icon={behance} label={"Behance"} link={"https://www.behance.net/utkarshgill07/"} />
                         </div>
+                       
                     </div>
 
-
+                    <p className="signature">I designed and coded this web-app from scratch. © 2020</p>
                 </div>
         )
     }

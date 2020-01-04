@@ -11,7 +11,8 @@
     line-height: 58px;
     letter-spacing: -0.01em;
     grid-row: 2 / 3;
-    opacity:.87
+    opacity:.87;
+    margin: 0;
 }
 
 .photo {
@@ -43,9 +44,15 @@
         line-height: 58px;
         letter-spacing: -0.01em;
         opacity:.87;
-        margin: 0;
         padding-bottom: 72px;
     }
+    #quote {
+        font-family: PP Lorge;
+        opacity: .87;
+        font-size: 20px;
+        align-self: end;
+    }
+
     .intro-brief {
         display: flex;
         flex-direction: column;     

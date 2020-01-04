@@ -1,6 +1,8 @@
 import React from 'react';
 import './SideBar.scss';
 
+import './ProjectCard.scss';
+
 class SideBar extends React.Component {
     render() {
         return(

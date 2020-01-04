@@ -39,11 +39,18 @@
 
 .name {
     grid-row: 3 / 4;
+    word-break: break-all;
 }
 
 .greet {
     grid-row: 2 / 3;
     align-self: end;
+}
+
+.greet-section {
+    grid-row: 2 / 4;
+    align-self: center;
+    height: 200px;
 }
 
 span {
@@ -61,5 +68,16 @@ span {
         align-self: end;
         font-size: 60px;
         line-height: 72px;
+    }
+}
+
+@media screen and (max-width: 864px) {
+    .greet-section {
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 300px;
+        margin-bottom: 48px;
     }
 }

@@ -71,6 +71,16 @@ a {
     justify-self: right;
 }
 
+.signature {
+    grid-row: 5 / 6;
+    align-self: end;
+    font-size: 14px;
+    line-height: 24px;;
+    font-family: PP Smol;
+    color: rgb(0,0,0);
+    opacity: .38;
+    padding-bottom: 5vh;
+}
 
 @media screen and (max-width: 864px) {
     #contact-greet {
@@ -79,17 +89,25 @@ a {
         line-height: 58px;
         letter-spacing: -0.01em;
         opacity:.87;
-        
         padding-bottom: 72px;
     }
+
+    .signature {
+        font-size: 16px;
+        line-height: 24px;;
+        font-family: PP Smol;
+        padding-top: 40px;
+    }
+
     #contact-info {
         display: flex;
         flex-direction: column;     
-        padding-bottom: 60px;
+        padding-bottom: 72px;
     }
     .links {
         display: flex;
         flex-direction: column;
+
     }
 
     .link-group {
@@ -97,6 +115,7 @@ a {
         flex-direction: column;
         justify-content: flex-start;
         padding-right: 36px;
+        padding-bottom: 48px;
     }
 
 .link-button {
