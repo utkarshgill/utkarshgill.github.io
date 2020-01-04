@@ -207,10 +207,10 @@ class AppView extends React.Component {
 
           <ReactFullpage.Wrapper>
 
-            <div onClick={() => fullpageApi.moveSectionDown()} data-anchor="home" className="section fp-noscroll"><Home /></div>
-            <div className="section fp-noscroll" data-anchor="work"><Work his={his} /></div>
-            <div className="section fp-noscroll" data-anchor="about"><About /></div>
-            <div className="section fp-noscroll" data-anchor="contact"><Contact /></div>
+            <div onClick={() => fullpageApi.moveSectionDown()} data-anchor="home" className="section"><Home /></div>
+            <div className="section" data-anchor="work"><Work his={his} /></div>
+            <div className="section" data-anchor="about"><About /></div>
+            <div className="section" data-anchor="contact"><Contact /></div>
 
           </ReactFullpage.Wrapper>
 
