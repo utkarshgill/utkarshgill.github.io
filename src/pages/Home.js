@@ -18,8 +18,8 @@ class Home extends React.Component {
         return (
             <div className="parent-box" >
                     <Typist show={false} className="greet-section"
-                            avgTypingDelay={70} 
-                            stdTypingDelay={10}
+                            avgTypingDelay={55} 
+                            stdTypingDelay={40}
                             startDelay={1000}       
                     >
                         <h1 className="greet">Hi! I'm</h1>
@@ -27,8 +27,11 @@ class Home extends React.Component {
                         <Typist.Backspace count={7} delay={500} />
                         <Typist.Delay ms={500} />
                         <span>veloper?</span>
-                        <Typist.Backspace count={12} delay={500} />
-                        <Typist.Delay ms={500} />Utkarsh <span>Gill.</span></h1>
+                        <Typist.Backspace count={10} delay={500} />
+                        <Typist.Delay ms={500} />
+                        <span>Unicorn!?</span>
+                        <Typist.Backspace count={11} delay={500} />
+                        <Typist.Delay ms={500} />Utkarsh <span>Gill<Typist.Delay ms={1000} />.</span></h1>
                     </Typist>
                 <p id="intro1">Product Designer & Web-Developer, passionate about solving problems
                     and designing intuitive digital experiences that leave

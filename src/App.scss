@@ -56,11 +56,11 @@ p {
 }
 
 .base::-webkit-scrollbar {
-    display: none;
+    display: none!important;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+    display: none!important;
 }
 
 body {
