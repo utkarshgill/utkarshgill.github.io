@@ -1,6 +1,7 @@
 import React from 'react';
 import './Contact.scss';
 import LinkButton from '../components/LinkButton.js';
+import contactPic from '../images/contact.jpg';
 
 import mail from '../icons/gmail.svg';
 import call from '../icons/phone.svg';
@@ -23,7 +24,7 @@ class Contact extends React.Component {
         return (
                 <div className="parent-box">
                     <h3 id="contact-greet" >Let's <span>Connect!</span></h3>
-                    <div className="photo" />
+                    <img src={contactPic} className="contact-photo" />
                     <p id="contact-info">Wanna create someting great? Feel free to contact
                    for freelance/collaborations or just drop a hi! :)</p>
                     <div className="links">

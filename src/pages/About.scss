@@ -16,11 +16,12 @@
 }
 
 .photo {
-    width: 272px;
+    position: relative;
+    right: -49.7px;
+    justify-self: end;
+    width: 321.7px;
     height: 532px;
-    background-color: #c4c4c4;
-    grid-row: 2 / 3;
-    justify-self: right;
+    grid-row: 2/3;
 }
 
 #quote {

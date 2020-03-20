@@ -28,6 +28,14 @@ a {
     transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
+.contact-photo {
+    position: relative;
+    justify-self: end;
+    width: 272px;
+    height: 532px;
+    grid-row: 2/3;
+}
+
 .link-button {
     display: flex;
     background: none;
@@ -63,13 +71,7 @@ a {
     grid-row: 3 / 4;
 }
 
-.photo {
-    width: 272px;
-    height: 532px;
-    background-color: #c4c4c4;
-    grid-row: 2 / 3;
-    justify-self: right;
-}
+
 
 .signature {
     grid-row: 5 / 6;
