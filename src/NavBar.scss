@@ -51,7 +51,7 @@ ul {
     }
 }
 
-.not-hidden {
+.not-hidden:hover {
     font-family: PP Okay;
     font-size: 16px;
     line-height: 24px;
@@ -63,10 +63,28 @@ ul {
     border: none;
     width: 24px;
     cursor: pointer;
+    opacity: .6;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    
+}
+
+.not-hidden {
+    font-family: PP Okay;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    opacity: .38;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
     animation-name: unhide;
     animation-duration: .4s;
     animation-play-state: running;
-    animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
@@ -162,8 +180,8 @@ ul {
     font-size: 16px;
     line-height: 24px;
     text-decoration: none;
-    color: #000000;
-    opacity: 87%;
+    color: rgb(0,0,0);
+    opacity: .87;
     background: none;
     height: 24px;
     padding: 0px;
@@ -173,13 +191,11 @@ ul {
     cursor: pointer;
 }
 
-.rotate-button:hover {
-    opacity: 87%;
-    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
+
 
 .rotate-button:hover {
-    opacity: 60%;
+    color: rgb(0,0,0);
+    opacity: .6;
     transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
@@ -189,14 +205,16 @@ ul {
     font-size: 16px;
     line-height: 24px;
     text-decoration: none;
-    color: #000000;
-    opacity: 38%;
+    color: rgb(0,0,0);
+    opacity: .38;
     background: none;
     height: 24px;
     padding: 0px;
     border: none;
     width: 24px;
     cursor: pointer;
+
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
     animation-name: antic;
     animation-duration: .4s;
     animation-play-state: running;
@@ -213,19 +231,40 @@ ul {
     }
 }
 
+.back-nav-button:hover {
+    text-decoration: none;
+    font-family: PP Okay;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: rgb(0,0,0);
+    opacity: .6;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    cursor: pointer;
+    
+}
+
 .back-nav-button {
     text-decoration: none;
     font-family: PP Okay;
     font-size: 16px;
     line-height: 24px;
     text-decoration: none;
-    color: #000000;
-    opacity: 38%;
+    color: rgb(0,0,0);
+    opacity: .38;
     background: none;
     height: 24px;
     padding: 0px;
     border: none;
     width: 24px;
+
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
     cursor: pointer;
     animation-name: clock;
     animation-duration: .4s;
@@ -250,19 +289,23 @@ ul {
     font-size: 16px;
     line-height: 24px;
     text-decoration: none;
-    color: #000000;
-    opacity: 38%;
+    color: rgb(0,0,0);
+    opacity: .38;
     background: none;
     height: 24px;
     padding: 0px;
     border: none;
     width: 24px;
+
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
     cursor: pointer;
     
 }
 
 .nav-button:hover {
-    opacity: 60%;
+    color: rgb(0,0,0);
+    opacity: .6;
+
     transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
@@ -349,7 +392,39 @@ ul {
     margin-left: 24px;
 }
 
+.nav-button-fix {
+    text-decoration: none;
+    font-family: PP Okay;
+    font-size: 20px;
+    line-height: 14px;
+    text-decoration: none;
+    color: rgb(0,0,0);
+    opacity: .38;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
 
+.nav-button-fix:hover {
+    text-decoration: none;
+    font-family: PP Okay;
+    font-size: 20px;
+    line-height: 14px;
+    text-decoration: none;
+    color: rgb(0,0,0);
+    opacity: .6;
+    background: none;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    width: 24px;
+    cursor: pointer;
+    transition: opacity .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
 
 @media only screen and (max-width: 864px) {
 
@@ -359,8 +434,8 @@ ul {
         font-size: 16px;
         line-height: 24px;
         text-decoration: none;
-        color: #000000;
-        opacity: 87%;
+        color:rgb(0,0,0);
+        opacity: .87;
         background: none;
         height: 24px;
         padding: 0px;
@@ -389,8 +464,8 @@ ul {
         font-size: 16px;
         line-height: 24px;
         text-decoration: none;
-        color: #000000;
-        opacity: 87%;
+        color: rgb(0,0,0);
+        opacity: 1;
         background: none;
         height: 24px;
         padding: 0px;
@@ -427,7 +502,7 @@ ul {
         font-size: 16px;
         line-height: 24px;
         text-decoration: none;
-        color: #000000;
+        color: rgb(0,0,0);
         background: none;
         height: 24px;
         padding: 0px;
@@ -465,7 +540,7 @@ ul {
         z-index: 1000;
         display: block;
         margin-right: 24px;
-        color: #000000;
+        color: rgb(0,0,0);
         opacity: .87;
         height: 24px;
         padding: 0px;
@@ -480,7 +555,7 @@ ul {
         z-index: 1100;
         display: block;
         margin-right: 24px;
-        color: #000000;
+        color: rgb(0,0,0);
         opacity: .87;
         height: 24px;
         padding: 0px;
@@ -494,8 +569,26 @@ ul {
         font-size: 20px;
         line-height: 14px;
         text-decoration: none;
-        color: #000000;
+        color: rgb(0,0,0);
         opacity: .38;
+        background: none;
+        height: 14px;
+        padding: 0px;
+        border: none;
+        width: 24px;
+        margin-bottom: 32px;
+        cursor: pointer;
+        
+    }
+
+    .nav-button-fix {
+        text-decoration: none;
+        font-family: PP Okay;
+        font-size: 20px;
+        line-height: 14px;
+        text-decoration: none;
+        color: rgb(0,0,0);
+        opacity: .87;
         background: none;
         height: 14px;
         padding: 0px;
@@ -512,7 +605,7 @@ ul {
         font-size: 20px;
         line-height: 14px;
         text-decoration: none;
-        color: #000000;
+        color: rgb(0,0,0);
         opacity: .87;
         background: none;
         height: 14px;

@@ -6,9 +6,10 @@ import './fonts/Proxima Nova Bold.otf';
 import './fonts/Proxima Nova Semibold.otf';
 import './fonts/Proxima Nova Regular.otf';
 import { BrowserRouter as Router } from 'react-router-dom';
+import 'babel-polyfill'
 
 const App = () => (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
         <AppView />
     </Router>
 )

@@ -1,13 +1,17 @@
 .container:hover text {
-    opacity: 100%!important;
-    color: white!important;
-    transition: color .25s cubic-bezier(0.4, 0.0, 0.2, 1), opacity .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+    color: rgba(255,255,255,1)!important;
+    opacity: 1!important;
+    transition: color .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    transition: opacity .25s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .container:hover h6 {
-    opacity: 100%!important;
-    color: white!important;
-    transition: color .25s cubic-bezier(0.4, 0.0, 0.2, 1), opacity .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+    color: rgb(255,255,255)!important;
+    opacity: 1!important;
+    transition: color .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    transition: opacity .25s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 
@@ -65,7 +69,7 @@ h6 {
     font-size: 20px;
     line-height: 24px;
     text-align: center;
-    color: #000000;
+    color: rgb(0,0,0);
     opacity: 0.87;
     width: 240px;
     margin: 0;
@@ -81,8 +85,7 @@ h6 {
     font-size: 10px;
     text-align: center;
     letter-spacing: 0.2em;
-    color: #000000;
-    opacity: 0.38;
+    color: rgba(0,0,0,.38);
     line-height: 8px;
     width: 240px;
     padding: 24px 0 24px 0;
@@ -95,8 +98,7 @@ h6 {
     font-size: 12px;
     line-height: 8px;
     text-align: center;
-    color: #000000;
-    opacity: 0.38;
+    color: rgba(0,0,0,.38);
     width: 240px;
     padding: 0;
     padding-bottom: 24px;
@@ -113,9 +115,33 @@ h6 {
 }
 
 @media screen and (max-width: 864px) and (min-width: 380px) {
-    .overlay {
-        display: none;
+
+    p {
+        font-size: 20px;
+        font-family: PP Smol;
+        line-height: 30px;
+        max-width: 470px;
+        margin: 0px;
+        opacity: .6;
     }
+
+    .container:hover .overlay{
+        height: 592px;
+        transition: height .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    .overlay {
+        position: absolute;
+        width: 366px;
+        height: 366px;
+        border-radius: 1px;
+        z-index: 10;
+        background: rgba(0,0,0,1);
+        z-index: 1;
+        transition: height .2s cubic-bezier(0.4, 0.0, 0.2, 1);;
+    }
+ 
+
     .container{
         position: relative;
         display: flex;
@@ -191,9 +217,6 @@ h6 {
 }
 
 @media screen and (max-width: 380) {
-    .overlay {
-        display: none;
-    }
     .container{
         position: relative;
         display: flex;
