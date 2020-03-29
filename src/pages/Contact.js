@@ -36,7 +36,7 @@ class Contact extends React.Component {
                         </div>
                         <div id="group2" className="link-group">
                             <LinkButton icon={linkedin} label={"LinkedIn"} link={"https://in.linkedin.com/in/utkarsh-gill-9a5029173"} />
-                            <LinkButton icon={github} label={"GitHub"} link={"https://github.com/qroach"} />
+                            <LinkButton icon={github} label={"GitHub"} link={"https://github.com/utkarshgill"} />
                             <LinkButton icon={dribbble} label={"dribbble"} link={"https://dribbble.com/utkarshgill07"} />
                             <LinkButton icon={behance} label={"Behance"} link={"https://www.behance.net/utkarshgill07/"} />
                         </div>
