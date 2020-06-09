@@ -1,64 +1,92 @@
-import React from 'react';
-import ProjectCard from '../components/ProjectCard.js';
-import ProjectView from './ProjectView.js';
-import { projects } from '../project_data.js';
-import { Redirect } from 'react-router-dom';
-import Home from './Home.js';
+import React from 'react'
+
 
 class Work extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            cardOpen: false,
-            projectIndex: 0,
-        }
-        this.cardStateHandler();
-    }
-    
-    iconHandler() {
-        if (!this.executed) {
-            this.executed = true;
-            this.props.his.setState({ rotate: true, projectIndex: this.state.projectIndex })
-        }
-    }
 
-    indexChangeHandler() {
-        this.props.his.setState({ selected: 0 });
-    }   
-
-    cardStateHandler() {
-        this.setState({ cardOpen: false })
-        this.executed = false;
-        this.props.his.setState({rotate: false})
-    }
-
-    contentViewHandler() {
-        const self = this;
-        if (this.state.cardOpen) {
-            this.iconHandler();
-            return <Redirect to="/projects" />
-        }
-        else    return (
-                <div className="card-holder">
-                    {projects.map((elem, index) => {
-                        return <ProjectCard self={self}
-                            index={index}
-                            thumbnail={elem.thumbnail}
-                            genre={elem.genre}
-                            title={elem.title}
-                            client={elem.client} />
-                    })}
-                </div>
+    checkDribbble() {
+        if(this.props.dribbble) {
+            return(
+                <a className="links" href={this.props.dribbble} target="_blank" rel="noopener noreferrer">
+                    <svg className="project-link" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="dribbble" d="M26.6521 15.4297C26.5428 13.3309 25.8128 11.3118 24.5547 9.62833C24.1714 10.0412 23.7617 10.4286 23.3281 10.7883C21.996 11.8948 20.5074 12.7979 18.9107 13.4683C19.1334 13.935 19.3374 14.387 19.5174 14.8137V14.8177C19.5682 14.9369 19.6171 15.0569 19.6641 15.1777C21.6827 14.951 23.8107 15.0337 25.8734 15.3123C26.1481 15.3497 26.4067 15.3897 26.6521 15.4297ZM14.1387 5.49633C15.4381 7.32722 16.6364 9.22784 17.7281 11.1897C19.3587 10.547 20.7067 9.73633 21.7921 8.83366C22.1688 8.52317 22.5235 8.1868 22.8534 7.82699C20.9347 6.21328 18.5072 5.3301 16.0001 5.33366C15.3761 5.33323 14.7533 5.38721 14.1387 5.49499V5.49633ZM5.67075 13.3297C6.57905 13.3067 7.48627 13.252 8.39075 13.1657C10.5769 12.9701 12.7445 12.6037 14.8734 12.0697C13.7608 10.1366 12.5595 8.25594 11.2734 6.43366C9.89971 7.11419 8.68843 8.08221 7.72174 9.27204C6.75505 10.4619 6.05557 11.8457 5.67075 13.3297ZM7.71075 22.7137C8.22808 21.9577 8.90808 21.107 9.81075 20.1817C11.7494 18.195 14.0374 16.6483 16.6854 15.795L16.7681 15.771C16.5481 15.2857 16.3414 14.8523 16.1334 14.4443C13.6854 15.1577 11.1067 15.603 8.53741 15.8337C7.28408 15.947 6.16008 15.9963 5.33341 16.0043C5.33105 18.4478 6.17114 20.8174 7.71208 22.7137H7.71075ZM20.0067 25.887C19.4926 23.294 18.7648 20.748 17.8307 18.275C15.1614 19.2443 13.0347 20.6617 11.3907 22.3523C10.7273 23.0222 10.1385 23.7621 9.63475 24.559C11.4732 25.9307 13.7063 26.6703 16.0001 26.667C17.3733 26.669 18.7339 26.405 20.0067 25.8897V25.887ZM22.5041 24.4537C24.5858 22.8533 26.0039 20.5413 26.4867 17.9603C26.0334 17.847 25.4587 17.7337 24.8267 17.6457C23.4216 17.4433 21.9958 17.4285 20.5867 17.6017C21.3802 19.8401 22.0207 22.1298 22.5041 24.455V24.4537ZM16.0001 29.3337C8.63608 29.3337 2.66675 23.3643 2.66675 16.0003C2.66675 8.63633 8.63608 2.66699 16.0001 2.66699C23.3641 2.66699 29.3334 8.63633 29.3334 16.0003C29.3334 23.3643 23.3641 29.3337 16.0001 29.3337Z" fill="black"/>
+                    </svg>
+                 </a>
             )
         }
+        return null;
+    } 
 
-    render() {
-        return (
-            <div className="worky">
-                {this.contentViewHandler()}
+    checkBehance() {
+        if(this.props.behance) {
+            return(
+                <a className="links" href={this.props.behance} target="_blank" rel="noopener noreferrer">
+                    <svg className="project-link" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="behance" d="M9.92392 7.13281C10.7759 7.13281 11.5639 7.19948 12.2839 7.39681C12.9373 7.51687 13.5609 7.76325 14.1199 8.12215C14.6453 8.45148 15.0386 8.91415 15.2999 9.50748C15.5626 10.1008 15.6933 10.8275 15.6933 11.6181C15.6933 12.5421 15.4973 13.3328 15.0386 13.9261C14.6453 14.5208 13.9893 15.0475 13.2026 15.4435C14.3173 15.7741 15.1693 16.3675 15.6933 17.1581C16.2186 17.9501 16.5466 18.9395 16.5466 20.0608C16.5466 20.9848 16.3492 21.7755 16.0212 22.4355C15.6932 23.0955 15.1692 23.6888 14.5786 24.0848C13.937 24.5093 13.2277 24.8213 12.4813 25.0075C11.6946 25.2062 10.9079 25.3381 10.1213 25.3381H1.33325V7.13281H9.92392ZM9.39858 14.5195C10.1199 14.5195 10.7106 14.3221 11.1693 13.9928C11.6279 13.6635 11.8253 13.0688 11.8253 12.3435C11.8253 11.9475 11.7586 11.5515 11.6279 11.2888C11.4972 11.0248 11.2999 10.8261 11.0386 10.6288C10.7759 10.4968 10.5133 10.3648 10.1853 10.2995C9.85725 10.2328 9.53058 10.2328 9.13592 10.2328H5.33325V14.5208H9.39992L9.39858 14.5195ZM9.59592 22.3035C9.98925 22.3035 10.3826 22.2368 10.7106 22.1715C11.0417 22.1085 11.355 21.9733 11.6279 21.7755C11.8951 21.5825 12.1186 21.3353 12.2839 21.0501C12.4146 20.7208 12.5466 20.3248 12.5466 19.8635C12.5466 18.9395 12.2839 18.2795 11.7599 17.8181C11.2346 17.4221 10.5133 17.2248 9.66125 17.2248H5.33325V22.3048H9.59592V22.3035ZM22.2519 22.2368C22.7759 22.7648 23.5626 23.0288 24.6119 23.0288C25.3332 23.0288 25.9892 22.8315 26.5132 22.5021C27.0386 22.1061 27.3666 21.7101 27.4972 21.3141H30.7106C30.1852 22.8968 29.3986 24.0182 28.3506 24.7435C27.2999 25.4035 26.0546 25.7995 24.5466 25.7995C23.5817 25.8024 22.625 25.6233 21.7266 25.2715C20.9182 24.9682 20.1973 24.4699 19.6279 23.8208C19.019 23.2136 18.5689 22.4658 18.3172 21.6435C17.9893 20.7861 17.8572 19.8635 17.8572 18.8075C17.8572 17.8181 17.9893 16.8955 18.3172 16.0368C18.6326 15.2103 19.0992 14.4497 19.6933 13.7941C20.2839 13.2008 21.0052 12.6741 21.7919 12.3435C22.6675 11.9916 23.6029 11.8123 24.5466 11.8155C25.6612 11.8155 26.6452 12.0141 27.4972 12.4755C28.3506 12.9368 29.0052 13.4648 29.5306 14.2568C30.0665 15.0175 30.4658 15.8658 30.7106 16.7635C30.8412 17.6861 30.9066 18.6101 30.8412 19.6648H21.3332C21.3332 20.7208 21.7266 21.7101 22.2519 22.2381V22.2368ZM26.3826 15.3115C25.9239 14.8501 25.2026 14.5861 24.3492 14.5861C23.7599 14.5861 23.2999 14.7181 22.9066 14.9155C22.5132 15.1141 22.2519 15.3781 21.9893 15.6421C21.7479 15.8972 21.5882 16.2184 21.5306 16.5648C21.4639 16.8955 21.3986 17.1581 21.3986 17.4221H27.2999C27.1692 16.4328 26.8412 15.7741 26.3826 15.3115ZM20.6119 8.38615H27.9559V10.1675H20.6132V8.38615H20.6119Z" fill="black"/>
+                    </svg>
+                </a>
+            )
+        }
+        return null;
+    } 
+
+    checkMedium() {
+        if(this.props.medium) {
+            return(
+                <a className="links" href={this.props.medium} target="_blank" rel="noopener noreferrer">
+                    <svg className="project-link" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="medium" d="M5.33333 4H26.6667C27.0203 4 27.3594 4.14048 27.6095 4.39052C27.8595 4.64057 28 4.97971 28 5.33333V26.6667C28 27.0203 27.8595 27.3594 27.6095 27.6095C27.3594 27.8595 27.0203 28 26.6667 28H5.33333C4.97971 28 4.64057 27.8595 4.39052 27.6095C4.14048 27.3594 4 27.0203 4 26.6667V5.33333C4 4.97971 4.14048 4.64057 4.39052 4.39052C4.64057 4.14048 4.97971 4 5.33333 4ZM23.0667 21.2533C22.9333 21.1867 22.8667 20.9867 22.8667 20.852V10.6747C22.8667 10.5413 22.9333 10.3413 23.0667 10.2067L24.34 8.73333V8.66667H19.7867L16.3733 17.304L12.488 8.66667H7.80267V8.73333L9.00667 10.408C9.27467 10.6747 9.34133 11.0773 9.34133 11.412V18.776C9.408 19.1787 9.34133 19.6467 9.14133 20.048L7.33333 22.5253V22.592H12.1547V22.5253L10.3467 20.116C10.1467 19.7133 10.0787 19.312 10.1467 18.844V12.1467C10.2133 12.28 10.28 12.28 10.3467 12.548L14.8987 22.7253H14.9653L19.3867 11.68C19.32 12.08 19.32 12.5493 19.32 12.8853V20.7853C19.32 20.9853 19.2533 21.1187 19.12 21.2533L17.78 22.5253V22.592H24.3413V22.5253L23.0693 21.2533H23.0667Z" fill="black"/>
+                    </svg>
+                </a>
+            )
+        }
+        return null;
+    } 
+
+
+    render (){
+        if(this.props.index + 1 === this.props.page) {
+            this.photo="photo"
+            this.heading="heading"
+            this.subText="sub-text"
+            this.desc="description"
+            this.project="project-link-container"
+        }
+        else {
+            this.photo="photo-hidden"
+            this.heading="heading-hidden"
+            this.subText="sub-text-hidden"
+            this.desc="description-hidden"
+            this.project="project-link-container-hidden"
+        }
+        return(
+            <div className="work-container">
+                <div id="overlay" className="photo"/>
+                <div style={{height: "100%"}}><img className={this.photo} src={this.props.banner} alt="project-cover"></img></div>
+                <div className="text-container">
+                    <div className="text-box">
+                        <p className={this.heading}>{this.props.title}</p>
+                        <p className={this.subText}>{this.props.genre + "  •  " + this.props.client}</p>
+                        <p className={this.desc}>{this.props.brief}</p>
+                        {/* <div className="detail-box">
+                            <div className="detail">
+                                <p className="detail-head">My Role</p>
+                                <p className="detail-content">{this.props.roles}</p>
+                            </div>
+                            <div className="detail">
+                                <p className="detail-head">Duration</p>
+                                <p className="detail-content">{this.props.duration}</p>
+                            </div>
+                        </div> */}
+                        <div className={this.project}>
+                            {this.checkBehance()}
+                            {this.checkDribbble()}
+                            {this.checkMedium()}
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
-export default Work;
+export default Work

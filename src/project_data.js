@@ -1,10 +1,11 @@
 export const projects = [
     { 
-        title: "Cimba - City Management Tool",
+        title: "Designing a Social Credit System",
+        url: "NutanixDesignCompetition2020",
         thumbnail: require("./images/cimba_thumb.jpg"),
         banner: require("./images/cimba_banner.jpg"),
         genre: "Product & System Design",
-        client:"Nutanix",
+        client:"Nutanix Design Competition 2020",
         brief: "The goal was to imagine the working of a social rating system & design an interface that helps the Mayor to monitor the city’s state, identify issues & suggest solutions and rate the citizens based on that system",
         duration: "10 days (March '19)",
         roles: "System Analysis\nPlanning & Ideation\nIntegration\nWorkflows\nUser Research\nJourney Mapping\nWireframes\nScenarios\n",
@@ -12,6 +13,7 @@ export const projects = [
     },
     {    
         title: "Odin - The Marketplace Cerebrum",
+        url: "WheelseyeWinterInternship",
         thumbnail: require("./images/odin_thumb.jpg"),
         banner: require("./images/odin_banner.jpg"),
         genre: "product design",
@@ -23,6 +25,7 @@ export const projects = [
     },
     { 
         title: "Kookerr - A hands-free cooking assistant",
+        url: "HandsfreeCookingAssitant",
         thumbnail: require("./images/kook_thumb.jpg"),
         banner: require("./images/kookerr_banner.jpg"),
         genre: "UI/UX design",
