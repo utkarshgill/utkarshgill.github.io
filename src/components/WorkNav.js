@@ -10,8 +10,9 @@ class WorkNav extends React.Component {
         
         return (
             <div id={this.visibility} className="dots-container">
-                {projects.map((elem, index) => { let id = (index + 1) === this.props.page ? "selected"  : null 
-                                                    return <a href={"#" + elem.url} ><div id = {id} className="dot" /></a>
+                {projects.map((elem, index) => { let id = (index + 1) === this.props.page ? "selected": null 
+                                                let name = (index + 1) === this.props.page ? 0 : "browser-window__link" 
+                                                    return <a href={"#" + elem.url} className={name}><div id = {id} className="dot" /></a>
                                                 })}
             </div>
         )

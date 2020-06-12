@@ -1,7 +1,7 @@
 export const projects = [
     { 
         title: "Designing a Social Credit System",
-        url: "NutanixDesignCompetition2020",
+        url: "nutanixdesigncompetition2020",
         thumbnail: require("./images/cimba_thumb.jpg"),
         banner: require("./images/cimba_banner.jpg"),
         genre: "Product & System Design",
@@ -13,7 +13,7 @@ export const projects = [
     },
     {    
         title: "Odin - The Marketplace Cerebrum",
-        url: "WheelseyeWinterInternship",
+        url: "wheelseyewinterinternship",
         thumbnail: require("./images/odin_thumb.jpg"),
         banner: require("./images/odin_banner.jpg"),
         genre: "product design",
@@ -25,7 +25,7 @@ export const projects = [
     },
     { 
         title: "Kookerr - A hands-free cooking assistant",
-        url: "HandsfreeCookingAssitant",
+        url: "handsfreecookingassitant",
         thumbnail: require("./images/kook_thumb.jpg"),
         banner: require("./images/kookerr_banner.jpg"),
         genre: "UI/UX design",
