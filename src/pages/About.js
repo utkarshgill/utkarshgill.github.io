@@ -1,5 +1,5 @@
 import React from 'react'
-import mypic from '../images/test-ls.jpg'
+import mypic from '../images/about.jpg'
 
 import { projects } from '../project_data'
 
@@ -26,7 +26,8 @@ class About extends React.Component {
                     <div className="text-box">
                         <p id={this.heading} className={"heading gradient"}>The Dank Unicorn?</p>
                         <p className={this.subText}>Yeaahh... that's me!</p>
-                        <p className={this.desc}>{`Product Designer & Web-Developer, passionate about solving problems and designing intuitive digital experiences that leave a positive impact on people and the society.\n\nI’m a speedcuber, an amateur guitarist, a terrible singer (not being modest) but I like to sing. I prefer indie folk music & yes! I love Prateek Kuhad :3\n\nCurrently pursuing my bachelor’s from IIT Roorkee, I’m a self-learnt designer drawing experiences by solving real world problems for the users around me.`}</p>
+                        <p className={this.desc}>{`Speedcuber🤓, amatuer guitarist🎸, a terrible singer🤢. I love indie folk🎵and country🤠 music.🎻 I’m a huuuuuuge fan of Pewdiepie👊🏻, Rick & Morty😵 and Prateek Kuhad🎹. Being attracted to a hilariously dark🌚 and twisted sense of humor😈, I fall into weird social situations🤧.
+Currently, a B.Tech student at IIT Roorkee🏛️, I’m a clumsy dank unicorn🦄 trying to sort my life through Dezzayn.✍🏻`}</p>
                         <p className={this.catch}>Engineer by Qualification, Designer by Choice.</p>
                     </div>
                 </div>

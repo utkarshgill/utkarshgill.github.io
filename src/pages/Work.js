@@ -65,7 +65,7 @@ class Work extends React.Component {
                 <div className="text-container">
                     <div className="text-box">
                         <p className={this.heading}>{this.props.title}</p>
-                        <p className={this.subText}>{this.props.genre + "  •  " + this.props.client}</p>
+                        <p className={this.subText}>{this.props.genre + " • " + this.props.client}</p>
                         <p className={this.desc}>{this.props.brief}</p>
                         {/* <div className="detail-box">
                             <div className="detail">

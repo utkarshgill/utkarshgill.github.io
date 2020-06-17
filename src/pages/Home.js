@@ -20,7 +20,7 @@ function Home (props) {
                                                 <span className="gradient">Utkarsh Gill.</span>
                                             </TextLoop>
             </span>
-            <p className="intro">Product Designer & Web-Developer, passionate about solving problems and designing intuitive digital experiences that leave a positive impact on people and the society.</p> 
+            <p className="intro">Product Designer & Web-Developer, designing amazing <strike>user</strike> human experiences.</p> 
             <p id="comment-mobile">Swipe to view my work</p>
            
         </div>

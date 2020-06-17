@@ -1,3 +1,40 @@
+$hamburger-size:                            18px;
+$hamburger-thickness:                       2px; // Thickness of the bars 
+$hamburger-color:                           #000;
+$hamburger-color-hover:                     $hamburger-color;
+$hamburger-color-active:                    $hamburger-color;
+$hamburger-background:                      transparent;
+$hamburger-background-hover:                $hamburger-background;
+$hamburger-background-active:               $hamburger-background;
+$hamburger-background-transition-speed:     0.2s;
+$hamburger-border-color:                    transparent;
+$hamburger-border-width:                    0; // Note: the border will always act like it's inset, even if  
+                                            // you use a div element. I wanted to keep consistency between  
+                                            // the button and div element, which normally react differently  
+                                            // to a border. If you're using a div element, changing this won't  
+                                            // affect the real size of the button. 
+$hamburger-opacity:                         1;
+$hamburger-opacity-hover:                   1;
+$hamburger-opacity-transition-speed:        0.2s;
+$hamburger-padding:                         25px; // The space between the button border  
+                                            // and the actual bars. There's a little padding by default so the  
+                                            // clickable area is a little bigger than the visual button. You  
+                                            // can also use a px value here instead of a relative one. 
+$hamburger-border-radius:                   0; // Border-radius of the button. 
+$hamburger-bar-border-radius:               0; // Border-radius of the bars. 
+$hamburger-bar-spacing:                     5px; // How far the bars are apart from  
+                                            // eachother. You can also use a px value here instead of a relative  
+                                            // one. 
+$hamburger-animation-speed:                 1.5; // The timings of the animations are carefully chosen. But you  
+                                            // can use this factor variable to slow down or speed up the animations.  
+                                            // Use .5 for twice as slow, 2 for twice as fast etc. 
+$hamburger-class-name:                      'hamburger';
+
+
+@import "~delicious-hamburgers/scss/base";
+@import "~delicious-hamburgers/scss/animations/minimal";
+
+
 :root {
     --dark: #000000;
     --charcoal: #444444;
@@ -80,6 +117,34 @@ body {
     }
 }
 
+.hamburger {
+    display: none;
+    outline: none;
+    border: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger:active, .hamburger:focus {
+    outline: none!important;
+    outline: 0;
+    border: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
 
 .linear-progress {
     position: absolute;
@@ -89,7 +154,7 @@ body {
     transform-origin: 0 0 0;
 }
 
-.bar {
+.linear-progress .bar {
     position: absolute;
     left: 0;
     top: 0;
@@ -99,6 +164,9 @@ body {
     background-color: var(--dark)!important;
 }
 
+.hamburger .bar {
+    background-color: var(--dark)!important;
+}
 
 .cursor {
     pointer-events: none;
@@ -164,8 +232,8 @@ p {
     color: var(--smoke);
     position: absolute;
     bottom: 4vh;
-    left: 50%;
-    margin-left: -200.655px;
+    width: 100%;
+    text-align: center;
 }
 
 ::-moz-selection { 
@@ -242,7 +310,7 @@ p {
     padding: 0;
     object-fit: cover;
     animation-name: slide-right;
-    animation-duration: .6s;
+    animation-duration: 1s;
     animation-play-state: running;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -278,10 +346,6 @@ p {
     line-height: 26px;
     color: var(--dark);
     position: relative;
-    animation-name: slide-head;
-    opacity: 1;
-    will-change: transform;
-	transition: transform .4s ease-out 1.2s, opacity .4s ease-out 1.2s;
 }
 
 .catchphrase-hidden {
@@ -290,30 +354,18 @@ p {
     line-height: 26px;
     color: var(--dark);
     position: relative;
-    opacity: 0;
-    will-change: transform;
-    transition: opacity .4s ease-in ;
-	-webkit-transform: translateY(30%);
-			transform: translateY(30%);
 }
 
 #about-head {
     color: var(--dark);
     position: relative;
-    opacity: 1;
-    will-change: transform;
-    transition: transform .4s ease-out .6s, opacity .4s ease-out .6s, color .4s ease;
+    transition: color .4s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 
 #about-head-hidden {
     color: var(--dark);
     position: relative;
-    opacity: 0;
-    will-change: transform;
-    transition: opacity .4s ease-in ;
-	-webkit-transform: translateY(+30%);
-			transform: translateY(+30%);
 }
 
 #about-pic {
@@ -344,7 +396,7 @@ p {
     padding: 0;
     object-fit: cover;
     animation-name: slide-right;
-    animation-duration: .6s;
+    animation-duration: 1s;
     animation-play-state: running;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -374,9 +426,6 @@ p {
     display: flex;
     position: relative;
     left: -16px;
-    opacity: 1;
-    will-change: transform;
-	transition: transform .4s ease-out 1.2s, opacity .4s ease-out 1.2s;
 }
 
 @keyframes slide-head {
@@ -394,11 +443,6 @@ p {
     display: flex;
     position: relative;
     left: -16px;
-    opacity: 0;
-    will-change: transform;
-    transition: opacity .4s ease-in ;
-	-webkit-transform: translateY(30%);
-			transform: translateY(30%);
 }
 
 .links {
@@ -434,9 +478,6 @@ p {
     line-height: 52px;
     color: var(--dark);
     padding-bottom: 12px;
-    opacity: 1;
-    will-change: transform;
-	transition: transform .4s ease-out .6s, opacity .4s ease-out .6s;
 }
 
 
@@ -447,11 +488,6 @@ p {
     line-height: 52px;
     color: var(--dark);
     padding-bottom: 12px;
-    opacity: 0;
-    will-change: transform;
-    transition: opacity .4s ease-in ;
-	-webkit-transform: translateY(+30%);
-			transform: translateY(+30%);
 }
 
 .sub-text {
@@ -462,9 +498,6 @@ p {
     padding-bottom: 60px;
     text-transform: capitalize;
     position: relative;
-    opacity: 1;
-    will-change: transform;
-	transition: transform .4s ease-out .8s, opacity .4s ease-out .8s;;
 }
 
 
@@ -476,30 +509,16 @@ p {
     color: var(--smoke);
     padding-bottom: 60px;
     text-transform: capitalize;
-    position: relative;
-    opacity: 0;
-    will-change: transform;
-    transition: opacity .4s ease-in ;
-	-webkit-transform: translateY(+30%);
-			transform: translateY(+30%);
 }
 
 .detail-box{
     display: flex;
     position: relative;
-    opacity: 1;
     left: -16px;
-    will-change: transform;
-	transition: transform .4s ease-out 1.2s, opacity .4s ease-out 1.2s;
 }
 .detail-box-hidden{
     display: flex;
     position: relative;
-    opacity: 0;
-    will-change: transform;
-    transition: opacity .4s ease-in ;
-	-webkit-transform: translateY(+30%);
-			transform: translateY(+30%);
 }
 .detail {
     display: flex;
@@ -529,10 +548,6 @@ p {
     color: var(--charcoal);
     padding-bottom: 60px;
     position: relative;
-    opacity: 1;
-    will-change: transform;
-            
-	transition: transform .4s ease-out .8s, opacity .4s ease-out 1s;
 }
 
 .description-hidden {
@@ -542,11 +557,6 @@ p {
     color: var(--charcoal);
     padding-bottom: 60px;
     position: relative;
-    opacity: 0;
-    transition: opacity .4s ease-in ;
-    will-change: transform;
-	-webkit-transform: translateY(+30%);
-			transform: translateY(+30%);
 }
 
 .work-container {
@@ -573,7 +583,7 @@ p {
     padding: 0;
     object-fit: cover;
     animation-name: slide-left;
-    animation-duration: .6s;
+    animation-duration: 1s;
     animation-play-state: running;
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -818,14 +828,6 @@ p {
     width: 600px;
     text-align: center;
     color: var(--charcoal);
-    opacity: 0;
-    visibility: hidden;
-    animation-name: reveal;
-    animation-duration: .6s;
-    animation-delay: 7.2s;
-    animation-play-state: running;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #comment-mobile{
@@ -970,14 +972,6 @@ input {
     background-color: none;
     display: flex;
     justify-content: space-between;
-    opacity: 0;
-    visibility: hidden;
-    animation-name: reveal;
-    animation-duration: .6s;
-    animation-delay: 9s;
-    animation-play-state: running;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .toggle{
@@ -1026,7 +1020,7 @@ input {
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-#sun, #sun:hover {
+#sun {
     padding: 0;
     transform: rotate(-180deg);
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -1041,7 +1035,7 @@ input {
 
 .icon-path {
     fill: var(--dark);
-    transition: fill .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: fill .4s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #work-icon { fill: var(--pp-red); }
@@ -1066,7 +1060,7 @@ input {
     position: relative;
     top: 8px;
 
-    transition: color .6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity .6s cubic-bezier(0.4, 0.0, 0.2, 1) 1.8s, top .6s cubic-bezier(0.4, 0.0, 0.2, 1) 1.8s;
+    transition: color .4s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity .4s cubic-bezier(0.4, 0.0, 0.2, 1) 1.8s, top .4s cubic-bezier(0.4, 0.0, 0.2, 1) 1.8s;
 }
 
 #back-initial {
@@ -1085,6 +1079,11 @@ input {
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
+
+#back-invisible-mobile {
+    display: none;
+}
+
 
 @keyframes hide {
     0%{
@@ -1107,6 +1106,13 @@ input {
     animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
+#back-visible-mobile {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    bottom: 10vw;
+}
+
 @keyframes reveal {
     0%{
         opacity: 0;
@@ -1126,11 +1132,140 @@ input {
     display: none;
 }
 
+.ham-menu {
+    display: none;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.ham-menu-initial {
+    display: none;
+}
+
 @media only screen and (max-width: 425px) {
+
+    .back-hide {
+        opacity: 0!important;
+        visibility: hidden!important;
+    }
+
+    #back-invisible-mobile {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    #back-visible-mobile {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-text-mobile {
+        font-family: PP Lorge;
+        font-size: 16px;
+        line-height: 16px;
+        color: var(--dark);
+        padding-right: 24px;
+    }
+
+    .nav-icon-mobile {
+        padding: 20px;
+        width: 20px;
+        height: 20px;
+    }
     
+    .menu-options {
+        font-family: PP Lorge;
+        font-size: 32px;
+        line-height: 72px;
+        color: var(--dark);
+    }
+
+    .ham-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .ham-menu {
+        animation-name: hide;
+        animation-duration: .4s;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ham-menu-active {
+        animation-name: reveal;
+        animation-duration: .4s;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menu-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #open {
+        height: 100%;
+        background-color: var(--light);
+        align-items: flex-start;
+        position: absolute;
+        transition: height .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    #close {
+        background-color: var(--light);
+        align-items: flex-start;
+        position: absolute;
+        transition: height .6s cubic-bezier(0.4, 0.0, 0.2, 1), background-color .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+
+
+    #text-nav-hidden {
+        opacity: 0;
+        transition: opacity .2s ease-out;
+        display: block;
+        font-family: PP Lorge;
+        font-size: 16px;
+        line-height: 68px;
+        color: var(--dark);
+    }
+    
+    #text-nav {
+        display: block;
+        font-family: PP Lorge;
+        font-size: 16px;
+        line-height: 68px;
+        color: var(--dark);
+        opacity: 1;
+        transition: opacity .2s ease-out;
+
+    }
+
     .links:hover #behance{ fill: var(--dark); }
-.links:hover #dribbble{ fill: var(--dark); }
-.links:hover #medium{ fill: var(--dark); }
+    .links:hover #dribbble{ fill: var(--dark); }
+    .links:hover #medium{ fill: var(--dark); }
     .links { fill: var(--dark) }
 
     #img-container {
@@ -1166,14 +1301,7 @@ input {
         left: 0;
     }
 
-    #text-nav {
-        display: block;
-        font-family: PP Lorge;
-        font-size: 16px;
-        line-height: 26px;
-        color: var(--dark);
-
-    }
+    
 
     .circle-cursor {
         display: none;
@@ -1384,11 +1512,11 @@ input {
     }
 
     #ham {
-        display: block;
-    }
-    
-    #ham-path {
-        fill: var(--dark)
+        display: flex;
+        width: 20px;
+        height: 20px;
+        justify-content: center;
+        align-items: center;
     }
 
     .greet {
@@ -1419,7 +1547,6 @@ input {
         background-color: var(--light);
         transition: background-color .6s cubic-bezier(0.4, 0.0, 0.2, 1);
         display: flex;
-        align-items: center;
     }
     #comment-mobile{
         display: block;
@@ -1429,13 +1556,6 @@ input {
         color: var(--smoke);
         position: absolute;
         bottom: 10vw;
-        visibility: hidden;
-        animation-name: revealC;
-        animation-duration: .6s;
-        animation-delay: 9s;
-        animation-play-state: running;
-        animation-fill-mode: forwards;
-        animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
     }
 
     .nav-icon {
@@ -1455,12 +1575,117 @@ input {
         justify-content: flex-start;
 
     }
+
+    .hamburger {
+        display: block;
+    }
+    
     
 }
 
 
 
 @media only screen and (max-width: 380px) {
+
+
+    $hamburger-size:                            18px;
+    $hamburger-thickness:                       2px; // Thickness of the bars 
+    $hamburger-color:                           #000;
+    $hamburger-color-hover:                     $hamburger-color;
+    $hamburger-color-active:                    $hamburger-color;
+    $hamburger-background:                      transparent;
+    $hamburger-background-hover:                $hamburger-background;
+    $hamburger-background-active:               $hamburger-background;
+    $hamburger-background-transition-speed:     0.2s;
+    $hamburger-border-color:                    transparent;
+    $hamburger-border-width:                    0; // Note: the border will always act like it's inset, even if  
+                                                // you use a div element. I wanted to keep consistency between  
+                                                // the button and div element, which normally react differently  
+                                                // to a border. If you're using a div element, changing this won't  
+                                                // affect the real size of the button. 
+    $hamburger-opacity:                         1;
+    $hamburger-opacity-hover:                   1;
+    $hamburger-opacity-transition-speed:        0.2s;
+    $hamburger-padding:                         17px; // The space between the button border  
+                                                // and the actual bars. There's a little padding by default so the  
+                                                // clickable area is a little bigger than the visual button. You  
+                                                // can also use a px value here instead of a relative one. 
+    $hamburger-border-radius:                   0; // Border-radius of the button. 
+    $hamburger-bar-border-radius:               0; // Border-radius of the bars. 
+    $hamburger-bar-spacing:                     5px; // How far the bars are apart from  
+                                                // eachother. You can also use a px value here instead of a relative  
+                                                // one. 
+    $hamburger-animation-speed:                 1.5; // The timings of the animations are carefully chosen. But you  
+                                                // can use this factor variable to slow down or speed up the animations.  
+                                                // Use .5 for twice as slow, 2 for twice as fast etc. 
+    $hamburger-class-name:                      'hamburger';
+    
+    
+    @import "~delicious-hamburgers/scss/base";
+    @import "~delicious-hamburgers/scss/animations/minimal";
+
+    .menu-options {
+        font-family: PP Lorge;
+        font-size: 28px;
+        line-height: 60px;
+        color: var(--dark);
+    }
+
+    #text-nav-hidden {
+        opacity: 0;
+        transition: opacity .2s ease-out;
+        display: block;
+        font-family: PP Lorge;
+        font-size: 16px;
+        line-height: 52px;
+        color: var(--dark);
+    }
+    
+    #text-nav {
+        display: block;
+        font-family: PP Lorge;
+        font-size: 14px;
+        line-height: 52px;
+        color: var(--dark);
+        opacity: 1;
+        transition: opacity .2s ease-out;
+
+    }
+
+    .ham-menu {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s cubic-bezier(0.4, 0.0, 0.2, 1), visibility .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ham-menu-active {
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .3s cubic-bezier(0.4, 0.0, 0.2, 1), visibility .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    .nav-icon-mobile {
+        padding: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
     .description, .description-hidden{
         font-size: 12px;
         line-height: 20px;
@@ -1531,11 +1756,6 @@ input {
 
     .nav {
         height: 52px;
-    }
-
-    #text-nav {
-        font-size: 12px;
-        line-height: 20px;
     }
 
     .catchphrase, .catchphrase-hidden {

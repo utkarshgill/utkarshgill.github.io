@@ -1,5 +1,5 @@
 import React from 'react'
-import mypic from '../images/test-ls.jpg'
+import mypic from '../images/contact.jpg'
 
 import { projects } from '../project_data'
 

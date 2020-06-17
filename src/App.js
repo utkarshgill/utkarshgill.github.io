@@ -51,7 +51,7 @@ let id
       childSelector: "[data-anchor]", // CSS3 selector string for the pages
       anchors: [], // define the page anchors
       pips: false, // display the pips
-      animation: 600, // the duration in ms of the scroll animation
+      animation: 400, // the duration in ms of the scroll animation
       delay: 0, // the delay in ms before the scroll animation starts
       throttle: 50, // the interval in ms that the resize callback is fired
       orientation: "vertical", // or horizontal
@@ -94,12 +94,13 @@ let id
 
     pages.on("scroll.start", data => {
       this.setState({ page: pages.index })
+      localStorage.setItem('page', pages.index)
     });
 
    
     
 
-    const bar = document.querySelector(".bar");
+    const bar = document.querySelector(".linear-progress .bar");
 
     function update(data) {
       const pos = 1 - ((data.max - data.scrolled) / data.max);
@@ -107,6 +108,7 @@ let id
     }
 
     pages.on("scroll", update)
+
 
   
 
