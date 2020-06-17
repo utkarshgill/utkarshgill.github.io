@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.bd21804b.chunk.css",
+    "main.css": "/static/css/main.e0c74394.chunk.css",
     "main.js": "/static/js/main.ed8529c2.chunk.js",
     "main.js.map": "/static/js/main.ed8529c2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b0577c27.js",
@@ -8,9 +8,9 @@
     "static/js/2.5eecca89.chunk.js": "/static/js/2.5eecca89.chunk.js",
     "static/js/2.5eecca89.chunk.js.map": "/static/js/2.5eecca89.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.807d1c9863dd9503441bba9f8cd56fbc.js": "/precache-manifest.807d1c9863dd9503441bba9f8cd56fbc.js",
+    "precache-manifest.ad03f44e73435f8ff4cacfb4fd75a0d9.js": "/precache-manifest.ad03f44e73435f8ff4cacfb4fd75a0d9.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.bd21804b.chunk.css.map": "/static/css/main.bd21804b.chunk.css.map",
+    "static/css/main.e0c74394.chunk.css.map": "/static/css/main.e0c74394.chunk.css.map",
     "static/js/2.5eecca89.chunk.js.LICENSE": "/static/js/2.5eecca89.chunk.js.LICENSE",
     "static/media/index.scss": "/static/media/Catamaran-Regular.59bbd724.ttf",
     "static/media/about.jpg": "/static/media/about.79e91b47.jpg",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.b0577c27.js",
     "static/js/2.5eecca89.chunk.js",
-    "static/css/main.bd21804b.chunk.css",
+    "static/css/main.e0c74394.chunk.css",
     "static/js/main.ed8529c2.chunk.js"
   ]
 }
