@@ -745,13 +745,6 @@ p {
     align-items: center;
     width: 100vw;
     height: 10vh;
-    visibility: hidden;
-    animation-name: reveal;
-    animation-duration: .6s;
-    animation-delay: 9s;
-    animation-play-state: running;
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .red {color: var(--pp-red)}
@@ -1144,7 +1137,7 @@ input {
     display: none;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
 
     .back-hide {
         opacity: 0!important;
@@ -1524,6 +1517,7 @@ input {
         line-height: 64px;
         text-align: center;
         padding-bottom: 48px;
+        width: 400px;
     }
 
     .intro {
@@ -1711,6 +1705,8 @@ input {
     .greet {
         font-size: 44px;
         line-height: 56px;
+        width: 280px;
+        text-align: center;
     }
 
     .heading, .heading-hidden, #about-head, #about-head-hidden {
