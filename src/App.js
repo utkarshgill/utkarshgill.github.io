@@ -1,166 +1,111 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import mypic from './assets/guy.jpg'
 import './App.scss'
 
-import Home from './pages/Home.js'
-import Work from './pages/Work.js'
-import About from './pages/About.js'
-import Contact from './pages/Contact.js'
-import NavBar from './components/NavBar.js'
-import { projects } from './project_data.js'
+import UseAnimations from 'react-useanimations';
+import download from 'react-useanimations/lib/download'
+import linkedin from 'react-useanimations/lib/linkedin'
+import mail from 'react-useanimations/lib/mail'
 
-import WorkNav from './components/WorkNav'
+import { Frame, Page, Scroll, Stack } from "framer"
+import { projects } from './project_data'
+import resume from './assets/guy.jpg'
 
-import * as Pageable from 'pageable'
-import Demo3 from './cursor'
+function App() {
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
 
-class App extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      page: -1
+  const main = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 1.2
+      }
     }
   }
 
-componentDidMount() {
-  this.setState({})
-  const demo3 = new Demo3();
-}
-
-handleScroller() {
-let id
-  if (this.state.page === -1) id = "hover-listener-initial"
-  else if (this.state.page === 0) id = "hover-listener"
-  else { id = "hover-hidden"}
-  
-  return<div className={id} >
-  <svg id="down-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path id="down-path" d="M10.0001 10.9766L14.1251 6.85156L15.3034 8.0299L10.0001 13.3332L4.69678 8.0299L5.87511 6.85156L10.0001 10.9766Z" fill="black"/>
-  </svg>
-  <a id="comment" className="browser-window__link-comment" href={"#"+projects[0].url} >Scroll to view my work</a>
-</div>
-
-}
-
-
-  render() {
-    
-
-    const pages = new Pageable("#wrapper", {
-      childSelector: "[data-anchor]", // CSS3 selector string for the pages
-      anchors: [], // define the page anchors
-      pips: false, // display the pips
-      animation: 400, // the duration in ms of the scroll animation
-      delay: 0, // the delay in ms before the scroll animation starts
-      throttle: 50, // the interval in ms that the resize callback is fired
-      orientation: "vertical", // or horizontal
-      swipeThreshold: 50, // swipe / mouse drag distance (px) before firing the page change event
-      freeScroll: true, // allow manual scrolling when dragging instead of automatically moving to next page
-      navPrevEl: false, // define an element to use to scroll to the previous page (CSS3 selector string or Element reference)
-      navNextEl: "#comment", // define an element to use to scroll to the next page (CSS3 selector string or Element reference)
-      infinite: false, // enable infinite scrolling (from 0.4.0)
-      slideshow: false,
-      events: {
-        wheel: true, // enable / disable mousewheel scrolling
-        mouse: true, // enable / disable mouse drag scrolling
-        touch: true, // enable / disable touch / swipe scrolling
-        keydown: true, // enable / disable keyboard navigation
-      },
-      easing: function (currentTime, startPos, endPos, interval) {
-        // the easing function used for the scroll animation
-        return -endPos * (currentTime /= interval) * (currentTime - 2) + startPos;
-      },
-      onInit: function () {
-        // do something when the instance is ready
-      },
-      onUpdate: function () {
-        // do something when the instance updates
-      },
-      onBeforeStart: function () {
-        // do something before scrolling begins
-      },
-      onStart: function () {
-        // do something when scrolling begins
-      },
-      onScroll: function () {
-        // do something during scroll
-      },
-      onFinish: function () {
-        // do something when scrolling ends
-      },
-    });
-
-
-    pages.on("scroll.start", data => {
-      this.setState({ page: pages.index })
-      localStorage.setItem('page', pages.index)
-    });
-
-   
-    
-
-    const bar = document.querySelector(".linear-progress .bar");
-
-    function update(data) {
-      const pos = 1 - ((data.max - data.scrolled) / data.max);
-      bar.style.transform = `scale(${pos}, .5)`;
+  const item = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 2.4 ,
+        duration: 0.6
+      }
     }
+  }
 
-    pages.on("scroll", update)
+  return (
+    <Stack
+    initial="hidden"
+    animate="show" gap={0} center="x" width="100%" style={{maxWidth: "1200px"}}>
+      <Stack
+        center="x"
+        backgroundColor="rgba(27, 27, 27, 0.95)"
+        top={0}
+        gap={0}
+        style={{ zIndex: "10", boxSizing: "border-box" }}
+        width="100%" height="auto"
+        direction="horizontal"
+        distribution="space-between"
+        alignment="end"
+        paddingTop={40}
+        paddingLeft={24}
+        paddingRight={24}
+        variants={item}
+      >
+        <span className="text">gill.design</span>
+        <Stack direction="horizontal" width="auto" height="auto" gap={32}>
+          <a href="mailto: utkarshgill07@gmail.com"><UseAnimations size={28} strokeColor="#fff" animation={mail} /></a>
+          <a href="https://www.linkedin.com/in/utkarsh-gill-9a5029173/"><UseAnimations size={28} strokeColor="#fff" animation={linkedin} /></a>
+          <a href={resume} download><UseAnimations size={28} strokeColor="#fff" animation={download} /></a>
+        </Stack>
+      </Stack>
 
 
-  
+      <Stack
+        center="x"
+        gap={0}
+        width="100%"
+        height="auto"
+        style={{
+          boxSizing: "border-box",
+        }}
+        paddingRight={24}
+        paddingLeft={24}
+      >
+
+        <Stack variants={main} gap={16} distribution="center" alignment="center" height="64vh" width="100%" >
+          <p className="title">Hi, I'm Gill.
+          <span > I design the obvious.</span>
+          </p>
+          <Stack variants={item} gap={0} width="auto" height="auto"><p variants={item} className="sub-text">Upcoming Product Design Intern at Nutanix. Summer 2020 Intern at Postman.</p>
+        </Stack>
+        </Stack>
 
 
-
-
-
-
-    return (
-      <div>
-
-        <div className="circle-cursor circle-cursor--inner"></div>
-				<div className="circle-cursor circle-cursor--outer"></div>
-
-        {this.handleScroller()}
-
-
-
-        <NavBar pages={pages} page={this.state.page} />
-        <WorkNav page={this.state.page} />
-        <div className="linear-progress">
-          <div className="bar"></div>
-        </div>
-        <div id="wrapper">
-          <div className="section" data-anchor="home"><Home /></div>
+        <Stack variants={item} gap={16} alignment="start" width="100%" height="auto">
+          <span className="text">My work</span>
+          <span className="sub-text">A directory of my projects and work experiences</span>
+        </Stack>
+        <Stack variants={item} gap={16} width="100%" height="auto" paddingTop={48} paddingBottom={60}>
           {projects.map((elem, index) => {
-            return <div className="section" data-anchor={elem.url} ><Work
-              index={index}
-              page={this.state.page}
-              banner={elem.banner}
-              brief={elem.brief}
-              genre={elem.genre}
-              title={elem.title}
-              client={elem.client}
-              roles={elem.roles}
-              duration={elem.duration}
-              behance={elem.behance}
-              dribbble={elem.dribbble}
-              medium={elem.medium} /></div>
+            return <Frame image={elem.banner} whileHover={{ width: "101%" }} style={{ pointerEvents: "all" }} onClick={() => { openInNewTab(elem.link) }} backgroundColor="#6173FF" position="relative" width="100%" height="360px" radius="14px">
+              <Stack gap={8} style={{ maxWidth: "100%", boxSizing: "border-box" }} alignment="start" width="100%" height="auto" bottom={0} paddingBottom={28} paddingTop={28} paddingLeft={24} paddingRight={24}>
+                <span className="sub-text">{elem.subtext}</span>
+                <span className="text project">{elem.title}</span>
+              </Stack>
+            </Frame>
           })}
-          <div className="section" data-anchor="about"><About page={this.state.page} /></div>
-          <div className="section" data-anchor="contact"><Contact page={this.state.page} /></div>
-        </div>
+        </Stack>
+        <Stack width="100%"><span className="sub-text">I designed and developed this website from scratch © 2020</span></Stack>
+      </Stack>
+    </Stack>
 
-
-      </div>
-
-    )
-  }
-
-
- 
+  )
 }
 
 export default App
