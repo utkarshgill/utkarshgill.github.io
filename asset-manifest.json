@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.6423065a.chunk.css",
+    "main.css": "/static/css/main.e0020333.chunk.css",
     "main.js": "/static/js/main.b62ee8ff.chunk.js",
     "main.js.map": "/static/js/main.b62ee8ff.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b0577c27.js",
@@ -8,9 +8,9 @@
     "static/js/2.4b186795.chunk.js": "/static/js/2.4b186795.chunk.js",
     "static/js/2.4b186795.chunk.js.map": "/static/js/2.4b186795.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b78b2f58ce3f5c734d083afe5954c721.js": "/precache-manifest.b78b2f58ce3f5c734d083afe5954c721.js",
+    "precache-manifest.c889f0757ce56d357a6f5fe1cc6eff91.js": "/precache-manifest.c889f0757ce56d357a6f5fe1cc6eff91.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.6423065a.chunk.css.map": "/static/css/main.6423065a.chunk.css.map",
+    "static/css/main.e0020333.chunk.css.map": "/static/css/main.e0020333.chunk.css.map",
     "static/js/2.4b186795.chunk.js.LICENSE": "/static/js/2.4b186795.chunk.js.LICENSE",
     "static/media/App.scss": "/static/media/Atkinson-Hyperlegible-Regular-102a.b85cc92a.woff2",
     "static/media/Resume-UtkarshGill.pdf": "/static/media/Resume-UtkarshGill.f76da4b7.pdf",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.b0577c27.js",
     "static/js/2.4b186795.chunk.js",
-    "static/css/main.6423065a.chunk.css",
+    "static/css/main.e0020333.chunk.css",
     "static/js/main.b62ee8ff.chunk.js"
   ]
 }
